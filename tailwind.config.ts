@@ -73,6 +73,15 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      fontFamily: {
+        'opens-sans': ['Opens Sans', 'sans-serif'],
+      },
+    },
+    borderWidth: {
+      main: '3px',
+    },
+    boxShadow: {
+      cardMain: `8px 6px 0px #9CA3AF`,
     },
   },
   plugins: [require('tailwindcss-animate')],

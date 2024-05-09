@@ -1,10 +1,15 @@
-import Image from 'next/image';
+'use client';
+
+import Header from '@/components/Common/Header';
+import { Button } from '@/components/ui/button';
+import React from 'react';
+import 'react-modern-drawer/dist/index.css';
 
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-mainBlack">
-      <div>
-        <h1 className="text-orange-600">BELIEVE</h1>
+      <div className="pt-1">
+        <Header />
       </div>
     </main>
   );
