@@ -48,7 +48,7 @@ const itemMenu = [
   },
 ];
 
-const menuItemDropdownItemStyle = `text-xl md:hidden text-gray-400 font-bold flex items-center gap-2`;
+const menuItemDropdownItemStyle = `text-xl md:hidden text-gray-400 font-bold flex items-center gap-2 cursor-pointer`;
 const menuItemLinkIcon = `text-orange-600 text-xl`;
 
 function Header() {
@@ -101,7 +101,7 @@ function Header() {
                 return (
                   <DropdownMenuItem
                     key={i}
-                    className={`text-xl text-gray-400 font-bold flex items-center gap-2`}
+                    className={`text-xl text-gray-400 font-bold flex items-center gap-2 cursor-pointer`}
                   >
                     <span className="w-3 h-3 rounded-full border-solid border-[1px] border-white bg-orange-600" />
                     {item.label}

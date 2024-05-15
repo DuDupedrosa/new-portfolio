@@ -82,6 +82,7 @@ const config = {
     },
     boxShadow: {
       cardMain: `8px 6px 0px #9CA3AF`,
+      buttonMain: '8px 6px 0px #ffffff',
     },
   },
   plugins: [require('tailwindcss-animate')],
