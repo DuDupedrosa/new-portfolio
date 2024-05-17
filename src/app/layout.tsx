@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { useEffect } from 'react';
+import 'keen-slider/keen-slider.min.css';
 
 export default function RootLayout({
   children,

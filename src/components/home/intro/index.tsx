@@ -5,6 +5,7 @@ import Image from 'next/image';
 import React, { useEffect, useMemo, useState } from 'react';
 import homeImage from '@/assets/images/home-image.png';
 import ButtonMainCallAction from '@/components/Common/Button/ButtonMainCallAction';
+import DividerSection from '@/components/Common/DividerSection';
 
 const openP = `<p>`;
 const closeP = `</p>`;
