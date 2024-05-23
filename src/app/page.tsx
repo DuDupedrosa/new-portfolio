@@ -5,6 +5,7 @@ import DividerSection from '@/components/Common/DividerSection';
 import Header from '@/components/Common/Header';
 import HomeComponent from '@/components/home/intro';
 import ParticleComponent from '@/components/particles/ParticlesComponent';
+import MyPortfolioComponent from '@/components/home/intro/MyPortfolio';
 
 export default function Home() {
   return (
@@ -36,9 +37,10 @@ export default function Home() {
           <DividerSection />
         </div>
 
-        <h1 className="text-2xl text-blue-600 text-center mt-8">
-          THIS IS A TITLE
-        </h1>
+        {/* portfolio */}
+        <div>
+          <MyPortfolioComponent />
+        </div>
       </div>
     </main>
   );

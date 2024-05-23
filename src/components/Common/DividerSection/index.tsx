@@ -3,7 +3,7 @@
 import React from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-const animation = { duration: 50000, easing: (t: any) => t };
+const animation = { duration: 100000, easing: (t: any) => t };
 
 const dividerItems = [
   {
@@ -54,7 +54,7 @@ function DividerSection() {
   return (
     <div className="flex gap-5 overflow-x-hidden border-y-main border-y-white border-y-solid py-5">
       <div className="bg-mainBlack flex keen-slider" ref={sliderRef}>
-        <div className="flex gap-5 keen-slider__slide number-slide1">
+        <div className="flex gap-5 keen-slider__slide number-slide1 mr-5">
           {dividerItems.map((item, i) => {
             return (
               <div key={i} className={`flex items-center gap-5`}>
