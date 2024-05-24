@@ -9,7 +9,7 @@ import WhoIam from '@/components/home/WhoIAm';
 import CardDividerSection from '@/components/Common/CardDividerSection';
 import MotivationalPhrase from '@/components/home/MotivationalPhrase';
 import Graduation from '@/components/home/Graduation';
-import HomeComponent from '@/components/home/Intro';
+import HomeComponent from '@/components/home/Introduction';
 
 export default function Home() {
   return (
