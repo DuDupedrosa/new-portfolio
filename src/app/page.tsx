@@ -3,9 +3,13 @@
 import * as React from 'react';
 import DividerSection from '@/components/Common/DividerSection';
 import Header from '@/components/Common/Header';
-import HomeComponent from '@/components/home/intro';
+import HomeComponent from '@/components/home/Intro';
 import ParticleComponent from '@/components/particles/ParticlesComponent';
-import MyPortfolioComponent from '@/components/home/intro/MyPortfolio';
+import MyPortfolioComponent from '@/components/home/MyPortfolio';
+import WhoIam from '@/components/home/WhoIAm';
+import CardDividerSection from '@/components/Common/CardDividerSection';
+import MotivationalPhrase from '@/components/home/MotivationalPhrase';
+import Graduation from '@/components/home/Graduation';
 
 export default function Home() {
   return (
@@ -37,9 +41,34 @@ export default function Home() {
           <DividerSection />
         </div>
 
+        {/* WhoIam am i */}
+        <div>
+          <WhoIam />
+        </div>
+
+        {/* card divider section */}
+        <div>
+          <CardDividerSection />
+        </div>
+
         {/* portfolio */}
         <div>
           <MyPortfolioComponent />
+        </div>
+
+        {/* mark phrase */}
+        <div>
+          <MotivationalPhrase />
+        </div>
+
+        {/* divider */}
+        <div>
+          <DividerSection />
+        </div>
+
+        {/* Graduation */}
+        <div>
+          <Graduation />
         </div>
       </div>
     </main>

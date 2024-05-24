@@ -124,7 +124,7 @@ function PortfolioCard() {
 
 function MyPortfolioComponent() {
   return (
-    <div className="mt-16 px-6 md:px-[52px]">
+    <div className="mt-16 px-6 md:px-[52px] pb-16 border-b-main border-b-solid border-b-white">
       <PageTitle text="My portfolio" />
 
       <div className="max-w-[1020px] ml-[auto] mr-[auto] py-8 px-5 bg-gray-800 rounded-xl mt-16 shadow-cardMain border-main border-solid border-gray-400">

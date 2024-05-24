@@ -15,14 +15,14 @@ function HomeComplementSection() {
     <div className="w-full border-t-main border-t-white px-5 md:px-0">
       <div className="grid md:grid-cols-[1fr_1fr]">
         {/* primeira coluna */}
-        <div className="grid justify-center md:border-r-main md:border-r-white">
+        <div className="grid place-items-center md:border-r-main md:border-r-white px-5">
           <p className="text-white text-2xl md:text-4xl font-bold max-w-[520px] py-8 md:py-16">
             The front-end is my world. Im solve your problem with code
             <span className="text-orange-600">.</span>
           </p>
         </div>
         {/* segunda coluna */}
-        <div className="grid justify-center">
+        <div className="grid place-items-center px-5">
           <div className="py-8 md:py-16">
             <p className="text-gray-400 font-semibold text-lg md:text-2xl mb-8 max-w-[520px] ">
               Lorem Ipsum is simply dummy text of the printing and typesetting

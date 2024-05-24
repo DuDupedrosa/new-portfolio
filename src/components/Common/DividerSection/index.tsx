@@ -40,6 +40,9 @@ function DividerSection() {
     loop: true,
     renderMode: 'performance',
     drag: false,
+    slides: {
+      spacing: 20,
+    },
     created(s) {
       s.moveToIdx(5, true, animation);
     },
@@ -53,8 +56,8 @@ function DividerSection() {
 
   return (
     <div className="flex gap-5 overflow-x-hidden border-y-main border-y-white border-y-solid py-5">
-      <div className="bg-mainBlack flex keen-slider" ref={sliderRef}>
-        <div className="flex gap-5 keen-slider__slide number-slide1 mr-5">
+      <div className="bg-mainBlack flex gap-5 keen-slider" ref={sliderRef}>
+        <div className="flex gap-5 keen-slider__slide number-slide1">
           {dividerItems.map((item, i) => {
             return (
               <div key={i} className={`flex items-center gap-5`}>
