@@ -3,13 +3,13 @@
 import * as React from 'react';
 import DividerSection from '@/components/Common/DividerSection';
 import Header from '@/components/Common/Header';
-import HomeComponent from '@/components/home/Intro';
 import ParticleComponent from '@/components/particles/ParticlesComponent';
 import MyPortfolioComponent from '@/components/home/MyPortfolio';
 import WhoIam from '@/components/home/WhoIAm';
 import CardDividerSection from '@/components/Common/CardDividerSection';
 import MotivationalPhrase from '@/components/home/MotivationalPhrase';
 import Graduation from '@/components/home/Graduation';
+import HomeComponent from '@/components/home/Intro';
 
 export default function Home() {
   return (
