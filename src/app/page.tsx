@@ -10,10 +10,18 @@ import CardDividerSection from '@/components/Common/CardDividerSection';
 import MotivationalPhrase from '@/components/home/MotivationalPhrase';
 import Graduation from '@/components/home/Graduation';
 import HomeComponent from '@/components/home/Introduction';
+import i18n from '@/i18n/i18n';
+import PageFloatContainer from '@/components/Common/PageFloatContainer';
 
 export default function Home() {
+  // initialized i18n
+  React.useEffect(() => {
+    i18n.changeLanguage('pt');
+  }, []);
+
   return (
     <main className="">
+      <PageFloatContainer />
       {/* intro com as particulas */}
       <div>
         <div>

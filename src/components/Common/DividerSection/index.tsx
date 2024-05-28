@@ -33,6 +33,9 @@ const dividerItems = [
   {
     name: 'Node',
   },
+  {
+    name: 'JQuery',
+  },
 ];
 
 function DividerSection() {

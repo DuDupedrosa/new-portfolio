@@ -1,5 +1,6 @@
 import './globals.css';
 import 'keen-slider/keen-slider.min.css';
+import { useEffect } from 'react';
 
 export default function RootLayout({
   children,

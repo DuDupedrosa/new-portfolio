@@ -23,6 +23,7 @@ import {
 } from '../ui/sheet';
 import ButtonMainCallAction from './Button/ButtonMainCallAction';
 import { Button } from '../ui/button';
+import { useTranslation } from 'react-i18next';
 
 const linksHeader = [
   {
@@ -34,7 +35,7 @@ const linksHeader = [
     link: 'https://github.com',
   },
   {
-    label: "Let's talk",
+    label: 'lets_talk',
     link: 'https://github.com',
   },
 ];
@@ -62,6 +63,8 @@ const menuItemDropdownItemStyle = `text-lg rounded-lg hover:bg-gray-600 hover:te
 const menuItemLinkIcon = `text-orange-600 text-xl`;
 
 function Header() {
+  const { t } = useTranslation();
+
   function handleRedirect(link: string) {
     window.open(link, '_blank');
   }
@@ -74,7 +77,7 @@ function Header() {
           <SheetTrigger className="border-r-solid border-r-white border-r-main focus:outline-none">
             <div className="flex h-[90px] md:h-[initial] items-center gap-2 px-5 cursor-pointer">
               <RiMenu2Fill className="text-orange-600 text-4xl" />
-              <span className="text-2xl font-bold text-white">Menu</span>
+              <span className="text-2xl font-bold text-white">{t('menu')}</span>
             </div>
           </SheetTrigger>
           <SheetContent side={'left'} className="bg-mainBlack">
@@ -149,7 +152,7 @@ function Header() {
                   target="_blank"
                   className="text-2xl text-white font-bold"
                 >
-                  {item.label}
+                  {t(item.label)}
                 </a>
               </li>
             );
@@ -161,55 +164,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  /* <DropdownMenu>
-<DropdownMenuTrigger className="border-r-solid border-r-white border-r-main focus:outline-none">
-  <div className="flex h-[90px] md:h-[initial] items-center gap-2 px-5 cursor-pointer">
-    <RiMenu2Fill className="text-orange-600 text-4xl" />
-    <span className="text-2xl font-bold text-white">Menu</span>
-  </div>
-</DropdownMenuTrigger>
-<DropdownMenuContent className="bg-gray-800 mt-2 w-[320px] md:w-[220px] ml-5 border-solid border-[2px] border-gray-400 shadow-cardMain">
-  <DropdownMenuLabel className="text-xl md:hidden text-gray-400 font-bold flex items-center gap-2">
-    <IoShareSocial className="text-gray-400" />
-    Socials Medias
-  </DropdownMenuLabel>
-  <DropdownMenuSeparator className="bg-gray-400 md:hidden" />
-  <div className="flex md:hidden flex-col gap-2">
-    <DropdownMenuItem className={`${menuItemDropdownItemStyle}`}>
-      <FaGithub className={`${menuItemLinkIcon}`} />
-      Github
-    </DropdownMenuItem>
-    <DropdownMenuItem className={`${menuItemDropdownItemStyle}`}>
-      <FaLinkedin className={`${menuItemLinkIcon}`} />
-      Linkedin
-    </DropdownMenuItem>
-    <DropdownMenuItem className={`${menuItemDropdownItemStyle}`}>
-      <MdOutlinePhoneInTalk className={`${menuItemLinkIcon}`} />
-      Let's talk
-    </DropdownMenuItem>
-  </div>
-  <DropdownMenuSeparator className="bg-gray-400 md:hidden mt-8" />
-
-  <DropdownMenuLabel className="text-xl text-gray-400 font-bold flex items-center gap-2">
-    <MdAssistantNavigation className="text-gray-400" />
-    Navigation
-  </DropdownMenuLabel>
-  <DropdownMenuSeparator className="bg-gray-400" />
-  <div className="flex flex-col gap-2">
-    {itemMenu.map((item, i) => {
-      return (
-        <DropdownMenuItem
-          key={i}
-          className={`text-xl text-gray-400 font-bold flex items-center gap-2 cursor-pointer`}
-        >
-          <span className="w-3 h-3 rounded-full border-solid border-[1px] border-white bg-orange-600" />
-          {item.label}
-        </DropdownMenuItem>
-      );
-    })}
-  </div>
-</DropdownMenuContent>
-</DropdownMenu> */
-}
