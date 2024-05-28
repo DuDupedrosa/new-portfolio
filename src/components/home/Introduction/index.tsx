@@ -4,12 +4,20 @@ import React from 'react';
 import homeImage from '@/assets/images/home-image.png';
 import ButtonMainCallAction from '@/components/Common/Button/ButtonMainCallAction';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@/components/ui/button';
 
 const openP = `<p>`;
 const closeP = `</p>`;
 
 function HomeComplementSection() {
   const { t } = useTranslation();
+
+  function handleTeste() {
+    const section = document.getElementById('graduation');
+    if (!section) return;
+
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 
   return (
     <div className="w-full border-t-main border-t-white px-5 md:px-0">
@@ -20,6 +28,7 @@ function HomeComplementSection() {
             {t('front_is_my_world')}
             <span className="text-orange-600">.</span>
           </p>
+          <Button onClick={() => handleTeste()}>teste</Button>
         </div>
         {/* segunda coluna */}
         <div className="grid place-items-center px-5">

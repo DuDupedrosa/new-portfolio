@@ -1,0 +1,8 @@
+div.navigation-icon:hover svg,
+div.navigation-icon:hover div svg {
+  color: #fff;
+}
+
+.no-hover:hover {
+  background-color: transparent !important;
+}

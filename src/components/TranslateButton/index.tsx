@@ -35,7 +35,7 @@ function TranslateButton() {
         <DialogTrigger asChild>
           <Button
             onClick={() => setOpen(true)}
-            className="w-16 h-16 border-[2px]  border-solid border-white rounded-full bg-orange-600 grid place-items-center"
+            className="md:w-16 md:h-16 w-14 h-14 border-[2px]  border-solid border-white rounded-full bg-orange-600 grid place-items-center"
           >
             <MdOutlineTranslate className="text-white text-3xl" />
           </Button>

@@ -23,7 +23,7 @@ export default function Home() {
     <main className="">
       <PageFloatContainer />
       {/* intro com as particulas */}
-      <div>
+      <div id="intro">
         <div>
           {/* paticulas */}
           <div className="-z-50 absolute">
@@ -50,7 +50,7 @@ export default function Home() {
         </div>
 
         {/* WhoIam am i */}
-        <div>
+        <div id="about-me">
           <WhoIam />
         </div>
 
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
 
         {/* portfolio */}
-        <div>
+        <div id="portfolio">
           <MyPortfolioComponent />
         </div>
 
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
 
         {/* Graduation */}
-        <div>
+        <div id="graduation">
           <Graduation />
         </div>
       </div>
