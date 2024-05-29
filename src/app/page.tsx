@@ -20,13 +20,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main className="bg-mainBlack md:bg-[initial]">
       <PageFloatContainer />
       {/* intro com as particulas */}
       <div id="intro">
         <div>
           {/* paticulas */}
-          <div className="-z-50 absolute">
+          <div className="-z-50 hidden md:block absolute">
             <ParticleComponent />
           </div>
 
