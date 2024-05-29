@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button } from '../ui/button';
-import { MdOutlineGTranslate, MdOutlineTranslate } from 'react-icons/md';
+import { Button } from '@/components/ui/button';
+import { MdOutlineTranslate } from 'react-icons/md';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import {
   Dialog,
@@ -10,12 +10,13 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '../ui/dialogNotXClose';
+} from '@/components/ui/dialogNotXClose';
 import { useTranslation } from 'react-i18next';
 import { languageTextEnum } from '@/helpers/enums/LanguageEnum';
 import { changeLanguage } from 'i18next';
+import { floatButtonIconMain, floatButtonMain } from '../style/style';
 
-function TranslateButton() {
+function TranslateButtonComponent() {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState<boolean>(false);
 
@@ -35,9 +36,10 @@ function TranslateButton() {
         <DialogTrigger asChild>
           <Button
             onClick={() => setOpen(true)}
-            className="md:w-16 md:h-16 w-14 h-14 border-[2px]  border-solid border-white rounded-full bg-orange-600 grid place-items-center"
+            className={`${floatButtonMain}`}
           >
-            <MdOutlineTranslate className="text-white text-3xl" />
+            <span className="sr-only">open translate dialog</span>
+            <MdOutlineTranslate className={`${floatButtonIconMain}`} />
           </Button>
         </DialogTrigger>
         <DialogContent className="w-[320px] min-[340px]:w-[345px] sm:w-[520px] bg-gray-900 border-[1px] border-solid border-gray-400">
@@ -83,4 +85,4 @@ function TranslateButton() {
   );
 }
 
-export default TranslateButton;
+export default TranslateButtonComponent;

@@ -83,7 +83,7 @@ function Header() {
 
           {/* navigation box */}
           {openNavigation && (
-            <div className="bg-gray-800 animate-in rounded-lg py-5 px-2 absolute top-24 mt-2 w-[220px] ml-5 border-solid border-[2px] border-gray-400 shadow-cardMain">
+            <div className="bg-gray-800 animate__animated animate__fadeIn animate__faster rounded-lg py-5 px-2 absolute top-24 mt-2 w-[220px] ml-5 border-solid border-[2px] border-gray-400 shadow-cardMain">
               <ul className="flex flex-col gap-3">
                 {navigationRoutes.map((route, i) => {
                   return (

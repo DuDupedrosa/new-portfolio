@@ -11,6 +11,8 @@ import { TfiMoreAlt } from 'react-icons/tfi';
 import { navigationRoutes } from '@/helpers/shared/navigationMenuItems';
 import { handleToPage } from '@/helpers/methods/handleToPage';
 import { AiOutlineMenu } from 'react-icons/ai';
+import { X } from 'lucide-react';
+import { floatButtonIconMain, floatButtonMain } from '../style/style';
 
 const menuItemDropdownItemStyle = `text-lg rounded-lg hover:bg-gray-600 hover:text-gray-200 transition-all py-1 text-gray-400 font-medium flex items-center gap-2 cursor-pointer pl-6`;
 const menuItemLinkIcon = `text-orange-600 text-xl`;
@@ -56,10 +58,11 @@ function SheetComponent() {
           setOpen(!open);
           event.stopPropagation();
         }}
-        className="md:w-16 cursor-pointer w-14 h-14 md:h-16 border-[2px] border-solid border-white rounded-full bg-orange-600 flex flex-col items-center justify-center"
+        className={`${floatButtonMain} hover:bg-primary/90`}
       >
-        <TfiMoreAlt className="text-white text-2xl  hidden md:block" />
-        <AiOutlineMenu className="text-white text-2xl  block md:hidden" />
+        <span className="sr-only">open menu</span>
+        <TfiMoreAlt className={`${floatButtonIconMain} hidden md:block`} />
+        <AiOutlineMenu className={`${floatButtonIconMain} block md:hidden`} />
       </SheetTrigger>
       <SheetContent
         ref={sheetRef}
@@ -67,6 +70,13 @@ function SheetComponent() {
         className="bg-mainBlack"
         id="sheet"
       >
+        <div
+          onClick={() => setOpen(false)}
+          className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary cursor-pointer p-1"
+        >
+          <X className="h-5 w-5 text-white" />
+          <span className="sr-only">Close</span>
+        </div>
         <div className="h-full flex flex-col justify-between">
           {/* top page */}
           <div>
