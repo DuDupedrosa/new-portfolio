@@ -14,5 +14,13 @@
   "navigation": "Navigation",
   "socials_links": "Social networks",
   "open_new_job": "I'm available for a new project, come and talk to me.",
-  "open_new_job_sub_title": "Let's turn your ideas into reality! Get in touch and let's discuss how I can help with your next project."
+  "open_new_job_sub_title": "Let's turn your ideas into reality! Get in touch and let's discuss how I can help with your next project.",
+  "placa_mais": "Freelance project developed with HTML, CSS and JavaScript, created completely from scratch. I only used a figma layout as a reference and wrote all the code manually.",
+  "hexacode": "Freelance project developed with HTML, CSS, JavaScript and jQuery, created completely from scratch. I only used a figma layout as a reference and wrote all the code manually.",
+  "task_hub": "Full-stack project developed for study purposes, made entirely from scratch. The front-end was created using HTML, CSS (TailwindCSS), TypeScript and Next.js (React). The back-end was implemented with Node.js, NestJS, and MongoDB, including the creation and management of a REST API.",
+  "radar_covid": "Project developed for study purposes, created entirely from scratch. I used HTML, CSS(styled-components), TypeScript and Next.js (React) in the development. The project consumes a REST API with real COVID-19 data, presenting it in graphs, tables and forms.",
+  "bikecraft": "Project developed at the end of my HTML and CSS course. I only had access to a layout in Figma and developed all the code from scratch. I used HTML, CSS and JavaScript to create the interactions in the project.",
+  "rocket_nft": "This project was conceived as part of a Rocketseat challenge and was developed completely from scratch. Using a Figma layout as a reference, all the code was created from scratch, using HTML, CSS and JavaScript to implement the interactions in the interface.",
+  "call_action_see_project": "check out the project at",
+  "project_name_slide": "/projects/{{projectName}}"
 }

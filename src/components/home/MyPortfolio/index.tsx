@@ -8,65 +8,62 @@ import hexacode from '@/assets/images/projects/hexacode.png';
 import task_hub from '@/assets/images/projects/task_hub.png';
 import radar_covid from '@/assets/images/projects/radar_covid.png';
 import bikecraft from '@/assets/images/projects/bikecraft.png';
+import rocket_nfts from '@/assets/images/projects/rocket_nfts.png';
 
 // slide
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
+import { useTranslation } from 'react-i18next';
 
 const projects = [
   {
     image: placa_mais,
-    description:
-      'Projeto freelancer desenvolvido com HTML, CSS e JavaScript, criado completamente do zero. Utilizei apenas um layout no figma como referência e escrevi todo o código manualmente.',
+    description: 'placa_mais',
     title: 'PlacaMais',
     link: 'https://placa-mais.vercel.app/',
-    link_label: '/projetos/placa-mais',
+    link_label: 'placa-mais',
   },
   {
     image: hexacode,
-    description:
-      'Projeto freelancer desenvolvido com HTML, CSS, JavaScript e JQuery, criado completamente do zero. Utilizei apenas um layout no figma como referência e escrevi todo o código manualmente.',
+    description: 'hexacode',
     title: 'Hexacode',
     link: 'https://hexacode-ten.vercel.app/',
-    link_label: '/projetos/hexacode',
+    link_label: 'hexacode',
   },
   {
     image: task_hub,
-    description:
-      'Projeto full-stack desenvolvido para fins de estudo, feito totalmente do zero. O front-end foi criado utilizando HTML, CSS (tailwindcss), TypeScript, e Next.js (React). Já o back-end foi implementado com Node.js, NestJS, e MongoDB.',
+    description: 'task_hub',
     title: 'TaskHub',
     link: 'https://my-tasks-front.vercel.app/',
-    link_label: '/projetos/task-hub',
+    link_label: 'task-hub',
   },
   {
     image: radar_covid,
-    description:
-      'Projeto desenvolvido para fins de estudo, criado totalmente do zero. Utilizei HTML, CSS(styled-components), TypeScript e Next.js (React) no desenvolvimento. O projeto consome uma REST API com dados reais sobre a COVID-19, apresentando-os em gráficos, tabelas e formulários.',
+    description: 'radar_covid',
     title: 'Radar-Covid',
     link: 'https://radar-covid.vercel.app/',
-    link_label: '/projetos/radar-covid',
+    link_label: 'radar-covid',
   },
   {
     image: bikecraft,
-    description:
-      'Projeto desenvolvido ao término do meu curso de HTML e CSS. Tive acesso apenas a um layout no Figma e desenvolvi todo o código do zero. Utilizei HTML, CSS e JavaScript para criar as interações no projeto.',
+    description: 'bikecraft',
     title: 'BikeCraft',
     link: 'https://dudupedrosa.github.io/bikcraft/',
-    link_label: '/projetos/brikecraft',
+    link_label: 'brikecraft',
   },
-  // {
-  //   image: bikecraft,
-  //   description:
-  //     'Projeto desenvolvido em um desafio da Rocketseat, criado totalmente do zero. Com base em um layout no Figma, desenvolvi todo o código do zero utilizando HTML, CSS e JavaScript.',
-  //   title: 'Rocket-Nfts',
-  //   link: 'https://dudupedrosa.github.io/bikcraft/',
-  //   link_label: '/projetos/Rocket-Nfts',
-  // },
+  {
+    image: rocket_nfts,
+    description: 'rocket_nft',
+    title: 'Rocket-Nfts',
+    link: 'https://web-nfts.vercel.app/',
+    link_label: 'Rocket-Nfts',
+  },
 ];
 
 function PortfolioCard() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
+  const { t } = useTranslation();
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
@@ -100,7 +97,7 @@ function PortfolioCard() {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        className="h-[320px]"
+                        className="md:h-[320px]"
                       />
                     </div>
                     <div className="mt-5">
@@ -108,13 +105,15 @@ function PortfolioCard() {
                         {project.title}
                       </h3>
                       <p className="text-sm md:text-base font-medium text-gray-400 mt-2 text-center">
-                        {project.description} de uma conferida no projeto em{' '}
+                        {t(project.description)} {t('call_action_see_project')}{' '}
                         <a
                           href={project.link}
                           target="_blank"
                           className="underline text-orange-600 font-bold tracking-wider"
                         >
-                          {project.link_label}
+                          {t('project_name_slide', {
+                            projectName: project.link_label,
+                          })}
                         </a>
                       </p>
                     </div>
