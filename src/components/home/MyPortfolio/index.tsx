@@ -14,6 +14,8 @@ import rocket_nfts from '@/assets/images/projects/rocket_nfts.png';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { useTranslation } from 'react-i18next';
+import { FaRegHandPointRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -150,14 +152,28 @@ function PortfolioCard() {
 }
 
 function MyPortfolioComponent() {
+  const { t } = useTranslation();
+
   return (
     <div className="mt-16 px-6 md:px-[52px] pb-16 border-b-main border-b-solid border-b-white">
       <PageTitle text="My portfolio" />
 
-      <div className="max-w-[1020px] ml-[auto] mr-[auto] py-8 px-5 bg-gray-800 rounded-xl mt-16 shadow-cardMain border-main border-solid border-gray-400">
+      <div className="max-w-[1020px] ml-[auto] mr-[auto] mt-12 py-8 px-5 bg-gray-800 rounded-xl shadow-cardMain border-main border-solid border-gray-400">
         <div className="max-w-[760px] ml-[auto] mr-[auto]">
           <PortfolioCard />
         </div>
+      </div>
+
+      <div className="max-w-[1020px] ml-[auto] mr-[auto] flex justify-end mt-2">
+        <Link
+          href={'/projects'}
+          className="flex items-center gap-2 max-w-max cursor-pointer hover:bg-orange-400"
+        >
+          <FaRegHandPointRight className="text-orange-600 animate-bouce-x text-xl md:text-2xl block" />
+          <span className="underline cursor-pointer text-lg md:text-xl lowercase font-medium text-orange-600 flex py-1">
+            {t('list_all_projects')}
+          </span>
+        </Link>
       </div>
     </div>
   );

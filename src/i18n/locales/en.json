@@ -22,5 +22,6 @@
   "bikecraft": "Project developed at the end of my HTML and CSS course. I only had access to a layout in Figma and developed all the code from scratch. I used HTML, CSS and JavaScript to create the interactions in the project.",
   "rocket_nft": "This project was conceived as part of a Rocketseat challenge and was developed completely from scratch. Using a Figma layout as a reference, all the code was created from scratch, using HTML, CSS and JavaScript to implement the interactions in the interface.",
   "call_action_see_project": "check out the project at",
-  "project_name_slide": "/projects/{{projectName}}"
+  "project_name_slide": "/projects/{{projectName}}",
+  "list_all_projects": "Complete List of Projects"
 }

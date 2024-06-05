@@ -91,6 +91,21 @@
   margin-left: 12px;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #e5e7eb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ea580c;
+}
+
 @media (max-width: 769px) {
   .dot {
     width: 16px;

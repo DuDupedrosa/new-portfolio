@@ -2,6 +2,7 @@ import './globals.css';
 import 'keen-slider/keen-slider.min.css';
 import { useEffect } from 'react';
 import 'animate.css';
+import NextTopLoader from 'nextjs-toploader';
 
 export default function RootLayout({
   children,
@@ -19,7 +20,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-opens-sans">{children}</body>
+      <body className="font-opens-sans">
+        <NextTopLoader color="#ea580c" showSpinner={false} />
+        {children}
+      </body>
     </html>
   );
 }
