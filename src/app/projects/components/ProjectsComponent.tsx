@@ -3,22 +3,17 @@
 import Header from '@/components/Common/Header';
 import PageTitle from '@/components/Common/PageTitle.tsx';
 import { allProjectsItems } from '@/helpers/PorfolioItems/allProjects';
-import { AllProjectsItem } from '@/types/project';
+import { AllProjectsItemType } from '@/types/project';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FaInfoCircle } from 'react-icons/fa';
 import ReactPaginate from 'react-paginate';
 
-const dropDownItemStyle =
-  'text-mainBlack text-base hover:bg-gray-400 transition-all cursor-pointer';
-
-function SeparatorDropdown() {
-  return <div className="w-full h-[1px] bg-gray-400"></div>;
-}
-
 function ProjectsComponent() {
-  const [projects, setProjects] = useState<AllProjectsItem[] | []>([]);
+  const [projects, setProjects] = useState<AllProjectsItemType[] | []>([]);
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemsPerPage, setItemsPerPage] = useState<number>(4);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const getFirstFourProjects = allProjectsItems.slice(0, 4);
@@ -34,6 +29,10 @@ function ProjectsComponent() {
     setProjects(getItemsPerPage);
   }
 
+  function handleRedirectProject(link: string) {
+    window.open(link, '_blank');
+  }
+
   return (
     <div>
       {/* header */}
@@ -43,11 +42,10 @@ function ProjectsComponent() {
       <section className="mt-20 pb-20 px-8">
         {/* header - title */}
         <div>
-          <PageTitle text="Meus projetos" />
+          <PageTitle text={t('my_projects')} />
           <div className="grid place-items-center">
             <p className="text-base md:text-lg font-semibold text-gray-400 text-center max-w-3xl mt-5">
-              Descubra a jornada por trás de cada um dos meus projetos
-              realizados até hoje, onde cada obra é uma nova lição aprendida.
+              {t('my_projects_subtitle')}
             </p>
           </div>
         </div>
@@ -57,7 +55,7 @@ function ProjectsComponent() {
           {/* total de projetos */}
           <div className="mb-5 flex items-center gap-2">
             <span className="text-2xl block font-normal text-gray-200">
-              Total de projetos:
+              {t('projects_total')}:
             </span>
             <span className="text-2xl font-bold text-orange-600 p-1 rounded-lg">
               {allProjectsItems.length}
@@ -67,7 +65,7 @@ function ProjectsComponent() {
           <div className="hidden md:flex flex-col md:flex-row md:items-center gap-2">
             <FaInfoCircle className="text-blue-600 text-base" />
             <span className="flex text-gray-400 font-semibold text-base">
-              clique no card para visualizar o projeto.
+              {t('click_card_see_project')}
             </span>
           </div>
 
@@ -75,6 +73,7 @@ function ProjectsComponent() {
             projects.map((project, i) => {
               return (
                 <div
+                  onClick={() => handleRedirectProject(project.link)}
                   key={i}
                   className="bg-gray-700 cursor-pointer rounded-lg p-5 border-solid transition-all border-[2px] md:border-transparent hover:border-orange-600 border-orange-600 h-[160px] md:h-[initial] flex flex-col"
                 >
@@ -95,7 +94,7 @@ function ProjectsComponent() {
                     href="/"
                     className="text-sm justify-self-end block md:hidden font-semibold text-center text-orange-600 underline mt-1"
                   >
-                    ver projeto
+                    {t('see_project')}
                   </a>
                 </div>
               );

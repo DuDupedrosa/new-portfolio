@@ -23,5 +23,10 @@
   "rocket_nft": "This project was conceived as part of a Rocketseat challenge and was developed completely from scratch. Using a Figma layout as a reference, all the code was created from scratch, using HTML, CSS and JavaScript to implement the interactions in the interface.",
   "call_action_see_project": "check out the project at",
   "project_name_slide": "/projects/{{projectName}}",
-  "list_all_projects": "Complete List of Projects"
+  "list_all_projects": "Complete List of Projects",
+  "my_projects": "My projects",
+  "my_projects_subtitle": "Discover the journey behind each of my projects to date, where each project is a new lesson learned.",
+  "projects_total": "Total projects",
+  "click_card_see_project": "Click on the card to view the project",
+  "see_project": "See project"
 }

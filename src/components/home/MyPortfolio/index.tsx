@@ -167,10 +167,10 @@ function MyPortfolioComponent() {
       <div className="max-w-[1020px] ml-[auto] mr-[auto] flex justify-end mt-2">
         <Link
           href={'/projects'}
-          className="flex items-center gap-2 max-w-max cursor-pointer hover:bg-orange-400"
+          className="flex items-center gap-2 max-w-max cursor-default"
         >
           <FaRegHandPointRight className="text-orange-600 animate-bouce-x text-xl md:text-2xl block" />
-          <span className="underline cursor-pointer text-lg md:text-xl lowercase font-medium text-orange-600 flex py-1">
+          <span className="underline hover:text-gray-400 cursor-pointer text-lg md:text-xl lowercase font-medium text-orange-600 flex py-1">
             {t('list_all_projects')}
           </span>
         </Link>
