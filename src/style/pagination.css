@@ -1,0 +1,28 @@
+/* .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+} */
+
+.pagination > li {
+  display: inline;
+  margin: 0 5px;
+  cursor: pointer;
+  width: 120px !important;
+}
+
+.pagination > li a[role='button'] {
+  background-color: transparent;
+  border: 2px solid #374151;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  width: 120px !important;
+  padding: 8px;
+}
+
+.pagination > li.active a {
+  background-color: #374151;
+}

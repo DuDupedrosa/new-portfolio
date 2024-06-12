@@ -1,7 +1,7 @@
 import './globals.css';
 import 'keen-slider/keen-slider.min.css';
-import { useEffect } from 'react';
 import 'animate.css';
+import '../style/pagination.css';
 import NextTopLoader from 'nextjs-toploader';
 
 export default function RootLayout({
