@@ -156,7 +156,7 @@ function MyPortfolioComponent() {
 
   return (
     <div className="mt-16 px-6 md:px-[52px] pb-16 border-b-main border-b-solid border-b-white">
-      <PageTitle text="My portfolio" />
+      <PageTitle text={t('my_projects')} />
 
       <div className="max-w-[1020px] ml-[auto] mr-[auto] mt-12 py-8 px-5 bg-gray-800 rounded-xl shadow-cardMain border-main border-solid border-gray-400">
         <div className="max-w-[760px] ml-[auto] mr-[auto]">

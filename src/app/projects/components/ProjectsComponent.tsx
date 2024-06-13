@@ -36,7 +36,7 @@ function ProjectsComponent() {
   return (
     <div>
       {/* header */}
-      <Header />
+      <Header notUseSectionToGo={true} />
 
       {/* conteúdo */}
       <section className="mt-20 pb-20 px-8">

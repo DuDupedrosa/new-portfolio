@@ -12,11 +12,18 @@ import Graduation from '@/components/home/Graduation';
 import HomeComponent from '@/components/home/Introduction';
 import i18n from '@/i18n/i18n';
 import PageFloatContainer from '@/components/Common/PageFloatContainer';
+import { handleToPage } from '@/helpers/methods/handleToPage';
 
 export default function Home() {
   // initialized i18n
   React.useEffect(() => {
+    const sectionToGo = localStorage.getItem('sectionToGo');
     i18n.changeLanguage('pt');
+
+    if (sectionToGo) {
+      handleToPage(sectionToGo);
+      localStorage.removeItem('sectionToGo');
+    }
   }, []);
 
   return (

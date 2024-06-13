@@ -16,6 +16,7 @@ import { navigationRoutes } from '@/helpers/shared/navigationMenuItems';
 import { handleToPage } from '@/helpers/methods/handleToPage';
 import { useRouter } from 'next/navigation';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const linksHeader = [
   {
@@ -32,7 +33,10 @@ const linksHeader = [
   },
 ];
 
-function Header() {
+interface Props {
+  notUseSectionToGo?: boolean;
+}
+function Header({ notUseSectionToGo = false }: Props) {
   const { t } = useTranslation();
   const router = useRouter();
   const [openNavigation, setOpenNavigation] = useState<boolean>(false);
@@ -46,6 +50,19 @@ function Header() {
       setOpenNavigation(false);
     }
   };
+
+  function handlePage(link: string) {
+    // usando o scroll suave pelo localStorage
+    if (notUseSectionToGo) {
+      localStorage.setItem('sectionToGo', link);
+      router.push('/');
+      return;
+    }
+
+    handleToPage(link, () => {
+      setOpenNavigation(false);
+    });
+  }
 
   useEffect(() => {
     if (openNavigation) {
@@ -85,23 +102,37 @@ function Header() {
           {openNavigation && (
             <div className="bg-gray-800 animate__animated animate__fadeIn animate__faster rounded-lg py-5 px-2 absolute top-24 mt-2 w-[220px] ml-5 border-solid border-[2px] border-gray-400 shadow-cardMain">
               <ul className="flex flex-col gap-3">
-                {navigationRoutes.map((route, i) => {
-                  return (
-                    <li className="no-hover p-0" key={i}>
-                      <div
-                        onClick={() =>
-                          handleToPage(route.link, () => {
-                            setOpenNavigation(false);
-                          })
-                        }
-                        className={`text-lg rounded-lg hover:bg-gray-600 transition-all hover:text-gray-200 text-gray-400 font-medium flex items-center gap-2 cursor-pointer py-1 pl-2 w-full`}
-                      >
-                        <span className="w-3 h-3 rounded-full transition-all border-solid border-[1px] border-white bg-orange-600" />
-                        {t(route.label)}
-                      </div>
-                    </li>
-                  );
-                })}
+                {/* scroll suave do localStorage, quando está em outra page sem ser a home */}
+                {notUseSectionToGo &&
+                  navigationRoutes.map((route, i) => {
+                    return (
+                      <li className="no-hover p-0" key={i}>
+                        <Link
+                          href={'/'}
+                          onClick={() => handlePage(route.link)}
+                          className={`text-lg rounded-lg hover:bg-gray-600 transition-all hover:text-gray-200 text-gray-400 font-medium flex items-center gap-2 cursor-pointer py-1 pl-2 w-full`}
+                        >
+                          <span className="w-3 h-3 rounded-full transition-all border-solid border-[1px] border-white bg-orange-600" />
+                          {t(route.label)}
+                        </Link>
+                      </li>
+                    );
+                  })}
+
+                {!notUseSectionToGo &&
+                  navigationRoutes.map((route, i) => {
+                    return (
+                      <li className="no-hover p-0" key={i}>
+                        <div
+                          onClick={() => handlePage(route.link)}
+                          className={`text-lg rounded-lg hover:bg-gray-600 transition-all hover:text-gray-200 text-gray-400 font-medium flex items-center gap-2 cursor-pointer py-1 pl-2 w-full`}
+                        >
+                          <span className="w-3 h-3 rounded-full transition-all border-solid border-[1px] border-white bg-orange-600" />
+                          {t(route.label)}
+                        </div>
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
           )}

@@ -57,7 +57,7 @@ function HomeComponent() {
               {t('intro_home_text')}
               <span className="text-orange-600">{closeP}</span>
             </p>
-            <ButtonMainCallAction />
+            {/* <ButtonMainCallAction /> */}
           </div>
         </div>
       </div>

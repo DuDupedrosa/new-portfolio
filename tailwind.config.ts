@@ -82,6 +82,7 @@ const config = {
       },
       fontFamily: {
         'opens-sans': ['Opens Sans', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
     borderWidth: {

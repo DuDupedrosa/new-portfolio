@@ -13,11 +13,16 @@ import { handleToPage } from '@/helpers/methods/handleToPage';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { X } from 'lucide-react';
 import { floatButtonIconMain, floatButtonMain } from '../style/style';
+import Link from 'next/link';
 
 const menuItemDropdownItemStyle = `text-lg rounded-lg hover:bg-gray-600 hover:text-gray-200 transition-all py-1 text-gray-400 font-medium flex items-center gap-2 cursor-pointer pl-6`;
 const menuItemLinkIcon = `text-orange-600 text-xl`;
 
-function SheetComponent() {
+interface Props {
+  notUseSectionToGo: boolean;
+}
+
+function SheetComponent({ notUseSectionToGo }: Props) {
   const [open, setOpen] = useState<boolean>(false);
   const sheetRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -44,6 +49,12 @@ function SheetComponent() {
   }, [open]);
 
   useEffect(() => {
+    // usando o scroll suave pelo localStorage
+    if (notUseSectionToGo) {
+      localStorage.setItem('sectionToGo', sectionToGo);
+      return;
+    }
+
     if (sectionToGo) {
       handleToPage(sectionToGo, () => {
         setOpen(false);
@@ -87,18 +98,35 @@ function SheetComponent() {
                 {t('navigation')}
               </span>
               <div className="flex flex-col gap-4 mt-5">
-                {navigationRoutes.map((route, i) => {
-                  return (
-                    <div
-                      onClick={() => seSectionToGo(route.link)}
-                      key={i}
-                      className={`text-lg rounded-lg hover:bg-gray-600 hover:text-gray-200 transition-all text-gray-400 pl-6 font-medium flex items-center gap-2 cursor-pointer py-1`}
-                    >
-                      <span className="w-3 h-3 rounded-full border-solid border-[1px] border-white bg-orange-600" />
-                      {t(route.label)}
-                    </div>
-                  );
-                })}
+                {/* manda sempre para a home, quando não estiver no /, dessa forma ele vai para a home manda o id da section para o localstorage e da o scroll suave quando cai na home */}
+                {notUseSectionToGo &&
+                  navigationRoutes.map((route, i) => {
+                    return (
+                      <Link
+                        onClick={() => seSectionToGo(route.link)}
+                        href={'/'}
+                        key={i}
+                        className={`text-lg rounded-lg hover:bg-gray-600 hover:text-gray-200 transition-all text-gray-400 pl-6 font-medium flex items-center gap-2 cursor-pointer py-1`}
+                      >
+                        <span className="w-3 h-3 rounded-full border-solid border-[1px] border-white bg-orange-600" />
+                        {t(route.label)}
+                      </Link>
+                    );
+                  })}
+
+                {!notUseSectionToGo &&
+                  navigationRoutes.map((route, i) => {
+                    return (
+                      <div
+                        onClick={() => seSectionToGo(route.link)}
+                        key={i}
+                        className={`text-lg rounded-lg hover:bg-gray-600 hover:text-gray-200 transition-all text-gray-400 pl-6 font-medium flex items-center gap-2 cursor-pointer py-1`}
+                      >
+                        <span className="w-3 h-3 rounded-full border-solid border-[1px] border-white bg-orange-600" />
+                        {t(route.label)}
+                      </div>
+                    );
+                  })}
               </div>
             </div>
 
