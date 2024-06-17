@@ -24,6 +24,8 @@ function SectionTitle({ text }: SectionTitleProps) {
 }
 
 function CourseCard({ name, hours, house, classes }: CouseListItem) {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-gray-800 relative border-main border-solid border-gray-400 h-[180px] flex flex-col justify-between rounded-lg shadow-cardMain p-5">
       {/* hrs + nome */}
@@ -32,13 +34,13 @@ function CourseCard({ name, hours, house, classes }: CouseListItem) {
         <div className="flex items-center gap-2 mb-5">
           <span className="w-3 h-3 block rounded-full bg-orange-600 border-[1px] border-solid border-white"></span>
           <span className="text-base font-semibold text-gray-400 block">
-            {hours} horas
+            {hours} {t('hours')}
           </span>
           <span className="text-base font-semibold text-orange-600 block">
             |
           </span>
           <span className="text-base font-semibold text-gray-400 block">
-            {classes} Aulas
+            {classes} {t('classes')}
           </span>
         </div>
 
@@ -55,7 +57,7 @@ function CourseCard({ name, hours, house, classes }: CouseListItem) {
         onClick={() => {
           window.open(`https://${house}`, '_blank');
         }}
-        className="text-sm text-gray-400 cursor-pointer underline font-semibold block bottom-5"
+        className="text-sm text-gray-400 max-w-max cursor-pointer underline font-semibold block bottom-5"
       >
         {house}
       </span>
@@ -85,7 +87,7 @@ function Graduation() {
 
   return (
     <div className="px-6 md:px-14 py-16">
-      <PageTitle text="Graduation" />
+      <PageTitle text={t('graduation')} />
 
       {/* formação academica */}
       <div className="mt-16">
@@ -121,7 +123,7 @@ function Graduation() {
         <div className="flex items-center gap-2 ml-[26px]">
           {/* imagem */}
           <div>
-            <Image src={CulturaInglesa} alt="UNIVERSIDADE CANDIDO MENDES" />
+            <Image src={CulturaInglesa} alt={'EN'} />
           </div>
           {/* texto */}
           <div>
@@ -140,11 +142,11 @@ function Graduation() {
 
       {/* cursos de especialicação */}
       <div className="mt-8">
-        <SectionTitle text="Cursos de especialização:" />
+        <SectionTitle text={`${t('specialization_courses')}:`} />
 
         <div className="mt-8 flex mb-2 items-center gap-5 justify-between max-w-[1020px]">
           <h2 className="text-lg font-bold text-gray-400">
-            - Total de cursos:{' '}
+            - {t('total_courses')}:{' '}
             <span className="text-orange-600">{coursesList.length}</span>
           </h2>
 
@@ -172,7 +174,7 @@ function Graduation() {
               <CourseCard
                 key={i}
                 classes={course.classes}
-                name={course.name}
+                name={t(course.name)}
                 hours={course.hours}
                 house={course.house}
               />

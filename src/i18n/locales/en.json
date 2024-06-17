@@ -34,5 +34,21 @@
   "candido": "Candido Mendes university",
   "analysis_development_systems": "Systems analysis and development",
   "languages": "Language(s)",
-  "intermediary": "Intermediary"
+  "intermediary": "Intermediary",
+  "hours": "Hours",
+  "classes": "Classes",
+  "total_courses": "Total courses",
+  "specialization_courses": "Specialization courses",
+  "html_css_beginners": "HTML and CSS for beginners",
+  "full_javascript": "Full JavaScript ES6",
+  "react_completo": "React Complete",
+  "ui_design_beginners": "UI Design for beginners",
+  "css_flexbox": "CSS FlexBox",
+  "css_gridlayout": "CSS Grid Layout",
+  "typescript_beginners": "TypeScript for beginners",
+  "react_typescript": "React with TypeScript",
+  "vue_2": "Vue.js 2 Complete",
+  "full_nestjs": "Nest.JS (MongoDB e MySQL)",
+  "react_native": "React native",
+  "footer_rights": "DuduPedrosa© all rights reserved"
 }
