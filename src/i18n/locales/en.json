@@ -50,5 +50,7 @@
   "vue_2": "Vue.js 2 Complete",
   "full_nestjs": "Nest.JS (MongoDB e MySQL)",
   "react_native": "React native",
-  "footer_rights": "DuduPedrosa© all rights reserved"
+  "footer_rights": "DuduPedrosa© all rights reserved",
+  "projects": "Projects",
+  "who_am_i": "Who am I?"
 }

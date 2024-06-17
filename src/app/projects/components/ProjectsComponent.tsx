@@ -1,5 +1,6 @@
 'use client';
 
+import BreadCrumb from '@/components/BreadCrumb';
 import Header from '@/components/Common/Header';
 import PageTitle from '@/components/Common/PageTitle.tsx';
 import { allProjectsItems } from '@/helpers/PorfolioItems/allProjects';
@@ -42,8 +43,16 @@ function ProjectsComponent() {
       {/* header */}
       <Header notUseSectionToGo={true} />
 
+      <div className="px-8 mt-8">
+        <BreadCrumb
+          routes={[
+            { label: t('projects'), current: true, toPath: '/projects' },
+          ]}
+        />
+      </div>
+
       {/* conteúdo */}
-      <section className="mt-20 pb-20 px-8">
+      <section className="mt-16 md:mt-20 pb-20 px-8">
         {/* header - title */}
         <div>
           <PageTitle text={t('my_projects')} />
