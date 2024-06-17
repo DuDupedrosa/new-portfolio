@@ -7,8 +7,6 @@ import CulturaInglesa from '@/assets/images/cultura-inglesa.png';
 import { coursesList } from '@/helpers/courses/items';
 import { CouseListItem } from '@/types/course';
 import ReactPaginate from 'react-paginate';
-import Link from 'next/link';
-import { FaRegHandPointRight } from 'react-icons/fa';
 
 const strongTag = `<strong>`;
 const strongTagClose = `</strong>`;
@@ -25,14 +23,7 @@ function SectionTitle({ text }: SectionTitleProps) {
   );
 }
 
-interface CouseCardProps {
-  time: number;
-  name: string;
-  classes: number;
-  link?: string;
-}
-
-function CourseCard({ time, classes, name, link }: CouseCardProps) {
+function CourseCard({ name, hours, house, classes }: CouseListItem) {
   return (
     <div className="bg-gray-800 relative border-main border-solid border-gray-400 h-[180px] flex flex-col justify-between rounded-lg shadow-cardMain p-5">
       {/* hrs + nome */}
@@ -41,7 +32,7 @@ function CourseCard({ time, classes, name, link }: CouseCardProps) {
         <div className="flex items-center gap-2 mb-5">
           <span className="w-3 h-3 block rounded-full bg-orange-600 border-[1px] border-solid border-white"></span>
           <span className="text-base font-semibold text-gray-400 block">
-            {time} horas
+            {hours} horas
           </span>
           <span className="text-base font-semibold text-orange-600 block">
             |
@@ -60,8 +51,13 @@ function CourseCard({ time, classes, name, link }: CouseCardProps) {
       </div>
 
       {/* link do curso */}
-      <span className="text-sm text-gray-400 underline font-semibold block bottom-5">
-        {link ? link : 'origamid.com'}
+      <span
+        onClick={() => {
+          window.open(`https://${house}`, '_blank');
+        }}
+        className="text-sm text-gray-400 cursor-pointer underline font-semibold block bottom-5"
+      >
+        {house}
       </span>
     </div>
   );
@@ -71,29 +67,21 @@ function Graduation() {
   const { t } = useTranslation();
   const [courseItems, setCourseItems] = useState<CouseListItem[] | []>([]);
   const [itemsPerPage, setItemsPerPage] = useState<number>(4);
-  const [pageItems, setPageItems] = useState<number>(0);
+  const [pageCount, setPageCount] = useState<number>(0);
+
+  function handlePageChange(page: number) {
+    const getItemsPerPage = coursesList.slice(
+      page * itemsPerPage - itemsPerPage,
+      page * itemsPerPage
+    );
+    setCourseItems(getItemsPerPage);
+  }
 
   useEffect(() => {
-    const getCourses = coursesList.slice(0, itemsPerPage);
-
-    setCourseItems(getCourses);
-    setPageItems(getCourses.length);
+    const getCourseItems = coursesList.slice(0, 4);
+    setPageCount(Math.ceil(coursesList.length / itemsPerPage));
+    setCourseItems(getCourseItems);
   }, []);
-
-  function handleSeeMoreCourses() {
-    if (coursesList.length === pageItems) {
-      const getCourses = coursesList.slice(0, -itemsPerPage);
-
-      setCourseItems(getCourses);
-      setPageItems(getCourses.length);
-    } else {
-      const getCourses = coursesList.slice(pageItems, pageItems + itemsPerPage);
-      const newArray = [...courseItems, ...getCourses];
-
-      setCourseItems(newArray);
-      setPageItems(newArray.length);
-    }
-  }
 
   return (
     <div className="px-6 md:px-14 py-16">
@@ -154,28 +142,59 @@ function Graduation() {
       <div className="mt-8">
         <SectionTitle text="Cursos de especialização:" />
 
-        <div className="grid md:grid-cols-[1fr_1fr] w-full max-w-[1020px] mt-8 gap-12">
-          {courseItems.map((couse, i) => {
+        <div className="mt-8 flex mb-2 items-center gap-5 justify-between max-w-[1020px]">
+          <h2 className="text-lg font-bold text-gray-400">
+            - Total de cursos:{' '}
+            <span className="text-orange-600">{coursesList.length}</span>
+          </h2>
+
+          <div className="mb-5 hidden md:block">
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={(selectedItem) =>
+                handlePageChange(selectedItem.selected + 1)
+              }
+              pageRangeDisplayed={1}
+              pageCount={pageCount}
+              previousLabel="<"
+              containerClassName={'pagination'}
+              activeClassName={'active'}
+              marginPagesDisplayed={1}
+              breakClassName={'break-me'}
+            />
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-[1fr_1fr] w-full max-w-[1020px] gap-12">
+          {courseItems.map((course, i) => {
             return (
               <CourseCard
                 key={i}
-                classes={couse.class}
-                name={couse.name}
-                time={couse.hours}
+                classes={course.classes}
+                name={course.name}
+                hours={course.hours}
+                house={course.house}
               />
             );
           })}
         </div>
-        <div className="max-w-[1020px] flex mt-5">
-          <span
-            className="flex items-center gap-2 max-w-max cursor-default"
-            onClick={() => handleSeeMoreCourses()}
-          >
-            <FaRegHandPointRight className="text-orange-600 animate-bouce-x text-xl md:text-2xl block" />
-            <span className="underline hover:text-gray-400 cursor-pointer text-lg md:text-xl lowercase font-medium text-orange-600 flex py-1">
-              {coursesList.length === pageItems ? 'Ver menos' : 'Ver mais'}
-            </span>
-          </span>
+
+        <div className="mt-8 md:hidden">
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel=">"
+            onPageChange={(selectedItem) =>
+              handlePageChange(selectedItem.selected + 1)
+            }
+            pageRangeDisplayed={1}
+            pageCount={pageCount}
+            previousLabel="<"
+            containerClassName={'pagination'}
+            activeClassName={'active'}
+            marginPagesDisplayed={1}
+            breakClassName={'break-me'}
+          />
         </div>
       </div>
     </div>
