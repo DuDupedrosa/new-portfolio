@@ -60,6 +60,18 @@ export const coursesList = [
     house: 'udemy.com',
   },
   {
+    name: 'next',
+    hours: 11,
+    classes: 78,
+    house: 'origamid.com',
+  },
+  {
+    name: 'scss_css',
+    hours: 6,
+    classes: 31,
+    house: 'origamid.com',
+  },
+  {
     name: 'react_native',
     hours: 45,
     classes: 334,

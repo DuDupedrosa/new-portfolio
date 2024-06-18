@@ -114,7 +114,7 @@ function ProjectsComponent() {
               );
             })}
 
-          <div className="grid justify-end mt-2">
+          <div className="grid justify-start mt-2">
             <ReactPaginate
               breakLabel="..."
               nextLabel=">"

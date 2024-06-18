@@ -52,5 +52,7 @@
   "react_native": "React native",
   "footer_rights": "DuduPedrosa© todos os direitos reservados",
   "projects": "Projetos",
-  "who_am_i": "Quem sou eu?"
+  "who_am_i": "Quem sou eu?",
+  "scss_css": "CSS com SASS",
+  "next": "Next.js"
 }
