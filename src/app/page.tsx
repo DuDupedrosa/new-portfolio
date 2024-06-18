@@ -14,6 +14,7 @@ import i18n from '@/i18n/i18n';
 import PageFloatContainer from '@/components/Common/PageFloatContainer';
 import { handleToPage } from '@/helpers/methods/handleToPage';
 import Footer from '@/components/Common/Footer';
+import type { Metadata } from 'next';
 
 export default function Home() {
   const [isBottom, setIsBottom] = React.useState(false);
