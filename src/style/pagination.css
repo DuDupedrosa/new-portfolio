@@ -23,6 +23,10 @@
   padding: 8px;
 }
 
+.pagination > li a[role='button']:hover {
+  border-color: #f2f2f2;
+}
+
 .pagination > li.active a {
   background-color: #374151;
 }

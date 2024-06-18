@@ -111,7 +111,7 @@ function PortfolioCard() {
                         <a
                           href={project.link}
                           target="_blank"
-                          className="underline text-orange-600 font-bold tracking-wider"
+                          className="underline text-orange-600 font-bold tracking-wider hover:text-gray-200"
                         >
                           {t('project_name_slide', {
                             projectName: project.link_label,
