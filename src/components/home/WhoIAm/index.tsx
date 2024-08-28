@@ -1,7 +1,7 @@
 import PageTitle from '@/components/Common/PageTitle.tsx';
 import React from 'react';
 import Image from 'next/image';
-import Eduardo from '@/assets/images/Eduardo Pedrosa.jpg';
+import Eduardo from '@/assets/images/07-dealboard 1.png';
 import { handleRedirect } from '@/helpers/methods/handleRedirect';
 import { useTranslation } from 'react-i18next';
 import { languageTextEnum } from '@/helpers/enums/LanguageEnum';
@@ -24,7 +24,7 @@ function WhoIam() {
               <Image
                 src={Eduardo}
                 alt="Imagem"
-                className="w-[220px] h-[220px] rounded-full"
+                className="w-[220px] h-[220px]"
               />
             </div>
 

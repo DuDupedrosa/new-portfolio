@@ -13,8 +13,12 @@ import HomeComponent from '@/components/home/Introduction';
 import i18n from '@/i18n/i18n';
 import PageFloatContainer from '@/components/Common/PageFloatContainer';
 import { handleToPage } from '@/helpers/methods/handleToPage';
+import Footer from '@/components/Common/Footer';
+import type { Metadata } from 'next';
 
 export default function Home() {
+  const [isBottom, setIsBottom] = React.useState(false);
+
   // initialized i18n
   React.useEffect(() => {
     const sectionToGo = localStorage.getItem('sectionToGo');
@@ -84,6 +88,11 @@ export default function Home() {
         {/* Graduation */}
         <div id="graduation">
           <Graduation />
+        </div>
+
+        {/* footer */}
+        <div>
+          <Footer />
         </div>
       </div>
     </main>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { MdOutlineTranslate } from 'react-icons/md';
 import { AiOutlineGlobal } from 'react-icons/ai';
@@ -15,10 +15,19 @@ import { useTranslation } from 'react-i18next';
 import { languageTextEnum } from '@/helpers/enums/LanguageEnum';
 import { changeLanguage } from 'i18next';
 import { floatButtonIconMain, floatButtonMain } from '../style/style';
+import BR from '@/assets/images/BR.png';
+import US from '@/assets/images/US.png';
+import Image from 'next/image';
+
+const buttonLanguage = `text-base hover:bg-transparent text-start border-solid border-[1px] border-transparent font-semibold hover:border-orange-600 
+bg-transparent grid grid-cols-[28px_1fr] gap-2 h-11 w-full py-2`;
 
 function TranslateButtonComponent() {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState<boolean>(false);
+  const [openChangeLanguageOptions, setOpenChangeLanguageOptions] =
+    useState<boolean>(false);
+  const dropDownRef = useRef<HTMLDivElement>(null);
 
   function handleChangeLanguage() {
     if (i18n.language === languageTextEnum.PT) {
@@ -30,18 +39,77 @@ function TranslateButtonComponent() {
     setOpen(false);
   }
 
+  const closeOutsideDropDown = (event: MouseEvent) => {
+    if (
+      dropDownRef.current &&
+      !dropDownRef.current.contains(event.target as Node)
+    ) {
+      setOpenChangeLanguageOptions(false);
+    }
+  };
+
+  useEffect(() => {
+    if (openChangeLanguageOptions) {
+      window.addEventListener('click', closeOutsideDropDown);
+    } else {
+      window.removeEventListener('click', closeOutsideDropDown);
+    }
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener('click', closeOutsideDropDown);
+    };
+  }, [openChangeLanguageOptions]);
+
   return (
-    <>
-      <Dialog open={open}>
-        <DialogTrigger asChild>
+    <div className="relative" ref={dropDownRef}>
+      <Button
+        onClick={(event) => {
+          setOpenChangeLanguageOptions(!openChangeLanguageOptions);
+          event.stopPropagation();
+        }}
+        className={`${floatButtonMain}`}
+      >
+        <span className="sr-only">open translate dialog</span>
+        <MdOutlineTranslate className={`${floatButtonIconMain}`} />
+      </Button>
+
+      {openChangeLanguageOptions && (
+        <div className="absolute animate__animated animate__fadeIn animate__faster bg-gray-800 py-5 px-2 w-[240px] bottom-[70px] right-[0px] rounded-lg border-solid border-[1px] border-gray-200">
           <Button
-            onClick={() => setOpen(true)}
-            className={`${floatButtonMain}`}
+            onClick={() => {
+              if (i18n.language !== languageTextEnum.PT) {
+                setOpen(true);
+              }
+            }}
+            className={`${buttonLanguage} ${
+              i18n.language === languageTextEnum.PT
+                ? 'bg-gray-600 hover:bg-gray-600'
+                : ''
+            }`}
           >
-            <span className="sr-only">open translate dialog</span>
-            <MdOutlineTranslate className={`${floatButtonIconMain}`} />
+            <Image alt="BRL" src={BR} className="w-[28px] h-[28px]" />
+            Português
           </Button>
-        </DialogTrigger>
+          <Button
+            onClick={() => {
+              if (i18n.language !== languageTextEnum.EN) {
+                setOpen(true);
+              }
+            }}
+            className={`${buttonLanguage} mt-2 ${
+              i18n.language === languageTextEnum.EN
+                ? 'bg-gray-600 hover:bg-gray-600'
+                : ''
+            }`}
+          >
+            <Image alt="US" src={US} className="w-[28px] h-[28px]" />
+            English
+          </Button>
+        </div>
+      )}
+
+      <Dialog open={open}>
         <DialogContent className="w-[320px] min-[340px]:w-[345px] sm:w-[520px] bg-gray-900 border-[1px] border-solid border-gray-400">
           <DialogHeader>
             <DialogTitle className="text-center text-lg font-medium text-white mb-3">
@@ -81,7 +149,7 @@ function TranslateButtonComponent() {
           </div>
         </DialogContent>
       </Dialog>
-    </>
+    </div>
   );
 }
 

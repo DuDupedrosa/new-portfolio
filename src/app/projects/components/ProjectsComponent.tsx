@@ -1,8 +1,10 @@
 'use client';
 
+import BreadCrumb from '@/components/BreadCrumb';
 import Header from '@/components/Common/Header';
 import PageTitle from '@/components/Common/PageTitle.tsx';
 import { allProjectsItems } from '@/helpers/PorfolioItems/allProjects';
+import useMedia from '@/hooks/useMedia';
 import { AllProjectsItemType } from '@/types/project';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +16,7 @@ function ProjectsComponent() {
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemsPerPage, setItemsPerPage] = useState<number>(4);
   const { t } = useTranslation();
+  const isMobile = useMedia('(max-width: 768px)');
 
   useEffect(() => {
     const getFirstFourProjects = allProjectsItems.slice(0, 4);
@@ -30,6 +33,8 @@ function ProjectsComponent() {
   }
 
   function handleRedirectProject(link: string) {
+    if (isMobile) return;
+
     window.open(link, '_blank');
   }
 
@@ -38,8 +43,16 @@ function ProjectsComponent() {
       {/* header */}
       <Header notUseSectionToGo={true} />
 
+      <div className="px-8 mt-8">
+        <BreadCrumb
+          routes={[
+            { label: t('projects'), current: true, toPath: '/projects' },
+          ]}
+        />
+      </div>
+
       {/* conteúdo */}
-      <section className="mt-20 pb-20 px-8">
+      <section className="mt-16 md:mt-20 pb-20 px-8">
         {/* header - title */}
         <div>
           <PageTitle text={t('my_projects')} />
@@ -91,8 +104,9 @@ function ProjectsComponent() {
                     </span>
                   </div>
                   <a
-                    href="/"
-                    className="text-sm justify-self-end block md:hidden font-semibold text-center text-orange-600 underline mt-1"
+                    href={project.link}
+                    target="_blank"
+                    className="text-sm justify-self-end block py-1 md:hidden font-semibold text-center text-orange-600 underline mt-1"
                   >
                     {t('see_project')}
                   </a>
@@ -100,7 +114,7 @@ function ProjectsComponent() {
               );
             })}
 
-          <div className="grid justify-end mt-2">
+          <div className="grid justify-start mt-2">
             <ReactPaginate
               breakLabel="..."
               nextLabel=">"

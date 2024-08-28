@@ -2,7 +2,12 @@ import './globals.css';
 import 'keen-slider/keen-slider.min.css';
 import 'animate.css';
 import '../style/pagination.css';
+import '../style/looper-slider.css';
 import NextTopLoader from 'nextjs-toploader';
+import { Metadata } from 'next';
+import { appDefaultMetadata } from '@/config/app-config';
+
+export const metadata: Metadata = { ...appDefaultMetadata };
 
 export default function RootLayout({
   children,
