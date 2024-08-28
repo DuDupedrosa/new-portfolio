@@ -17,7 +17,7 @@
   "open_new_job_sub_title": "Vamos transformar suas ideias em realidade! Entre em contato e vamos discutir como posso ajudar no seu próximo projeto.",
   "placa_mais": "Projeto freelancer desenvolvido com HTML, CSS e JavaScript, criado completamente do zero. Utilizei apenas um layout no figma como referência e escrevi todo o código manualmente.",
   "hexacode": "Projeto freelancer desenvolvido com HTML, CSS, JavaScript e JQuery, criado completamente do zero. Utilizei apenas um layout no figma como referência e escrevi todo o código manualmente.",
-  "task_hub": "Projeto full-stack desenvolvido para fins de estudo, feito totalmente do zero. O front-end foi criado utilizando HTML, CSS (TailwindCSS), TypeScript e Next.js (React). O back-end foi implementado com Node.js, NestJS, e MongoDB, incluindo a criação e o gerenciamento de uma API REST.",
+  "rocket_list": "Projeto full-stack desenvolvido para fins de estudo, feito totalmente do zero. O front-end foi criado utilizando HTML, CSS Styled-Components, TypeScript e Vite.js (React). O back-end foi implementado com Node.js, Express.js, e MongoDB, incluindo a criação e o gerenciamento de uma API REST com um CRUD completo e fluxo de autenticação utilizando JSON Web Token.",
   "radar_covid": "Projeto desenvolvido para fins de estudo, criado totalmente do zero. Utilizei HTML, CSS(styled-components), TypeScript e Next.js (React) no desenvolvimento. O projeto consome uma REST API com dados reais sobre a COVID-19, apresentando-os em gráficos, tabelas e formulários.",
   "bikecraft": "Projeto desenvolvido ao término do meu curso de HTML e CSS. Tive acesso apenas a um layout no Figma e desenvolvi todo o código do zero. Utilizei HTML, CSS e JavaScript para criar as interações no projeto.",
   "rocket_nft": "Este projeto foi concebido como parte de um desafio da Rocketseat e foi desenvolvido completamente do zero. Utilizando como referência um layout elaborado no Figma, todo o código foi criado do zero, empregando HTML, CSS e JavaScript para implementar as interações na interface.",
@@ -34,5 +34,6 @@
   "candido": "Universidade Candido Mendes",
   "analysis_development_systems": "Análise e desenvolvimento de sistemas",
   "languages": "Idioma(s)",
-  "intermediary": "Intermediário"
+  "intermediary": "Intermediário",
+  "who_am_i": "Quem sou eu?"
 }

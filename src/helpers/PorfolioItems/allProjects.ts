@@ -10,9 +10,9 @@ export const allProjectsItems = [
     link: 'https://hexacode-ten.vercel.app/',
   },
   {
-    name: 'TaskHub',
-    technologies: 'html / taiwindcss / React / nest.js / ... ',
-    link: 'https://my-tasks-front.vercel.app/',
+    name: 'Rocket-List',
+    technologies: 'html / styled-components / React / Express.js / ... ',
+    link: 'http://rocket-list.vercel.app/',
   },
   {
     name: 'Radar-Covid',
@@ -38,11 +38,6 @@ export const allProjectsItems = [
     name: 'PokeView',
     technologies: 'html / css / typescript / axios / ...',
     link: 'https://poke-view.vercel.app/',
-  },
-  {
-    name: 'TaskHub',
-    technologies: 'html / css / typescript',
-    link: 'https://my-tasks-front.vercel.app/',
   },
   {
     name: 'Camp-In',

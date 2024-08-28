@@ -5,10 +5,10 @@ import Image from 'next/image';
 // projetos
 import placa_mais from '@/assets/images/projects/placa_mais.png';
 import hexacode from '@/assets/images/projects/hexacode.png';
-import task_hub from '@/assets/images/projects/task_hub.png';
 import radar_covid from '@/assets/images/projects/radar_covid.png';
 import bikecraft from '@/assets/images/projects/bikecraft.png';
 import rocket_nfts from '@/assets/images/projects/rocket_nfts.png';
+import rocket_list from '@/assets/images/projects/rocket_list.jpg';
 
 // slide
 import { useKeenSlider } from 'keen-slider/react';
@@ -33,11 +33,11 @@ const projects = [
     link_label: 'hexacode',
   },
   {
-    image: task_hub,
-    description: 'task_hub',
-    title: 'TaskHub',
-    link: 'https://my-tasks-front.vercel.app/',
-    link_label: 'task-hub',
+    image: rocket_list,
+    description: 'rocket_list',
+    title: 'RocketList',
+    link: 'http://rocket-list.vercel.app/',
+    link_label: 'rocket-list',
   },
   {
     image: radar_covid,
