@@ -1,64 +1,72 @@
-import PageTitle from '@/components/Common/PageTitle.tsx';
-import React, { useState } from 'react';
-import Image from 'next/image';
+import PageTitle from "@/components/Common/PageTitle.tsx";
+import React, { useState } from "react";
+import Image from "next/image";
 
 // projetos
-import placa_mais from '@/assets/images/projects/placa_mais.png';
-import hexacode from '@/assets/images/projects/hexacode.png';
-import radar_covid from '@/assets/images/projects/radar_covid.png';
-import bikecraft from '@/assets/images/projects/bikecraft.png';
-import rocket_nfts from '@/assets/images/projects/rocket_nfts.png';
-import rocket_list from '@/assets/images/projects/rocket_list.jpg';
+import placa_mais from "@/assets/images/projects/placa_mais.png";
+import hexacode from "@/assets/images/projects/hexacode.png";
+import radar_covid from "@/assets/images/projects/radar_covid.png";
+import bikecraft from "@/assets/images/projects/bikecraft.png";
+import rocket_nfts from "@/assets/images/projects/rocket_nfts.png";
+import rocket_list from "@/assets/images/projects/rocket_list.jpg";
+import memory_game from "@/assets/images/projects/memory_game.png";
 
 // slide
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
-import { useTranslation } from 'react-i18next';
-import { FaRegHandPointRight } from 'react-icons/fa';
-import Link from 'next/link';
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import { useTranslation } from "react-i18next";
+import { FaRegHandPointRight } from "react-icons/fa";
+import Link from "next/link";
 
 const projects = [
   {
-    image: placa_mais,
-    description: 'placa_mais',
-    title: 'PlacaMais',
-    link: 'https://placa-mais.vercel.app/',
-    link_label: 'placa-mais',
+    image: memory_game,
+    description: "memory_game",
+    title: "MemoryGame",
+    link: "https://memory-game-ten-coral.vercel.app/",
+    link_label: "memory-game",
   },
   {
-    image: hexacode,
-    description: 'hexacode',
-    title: 'Hexacode',
-    link: 'https://hexacode-ten.vercel.app/',
-    link_label: 'hexacode',
+    image: placa_mais,
+    description: "placa_mais",
+    title: "PlacaMais",
+    link: "https://placa-mais.vercel.app/",
+    link_label: "placa-mais",
   },
   {
     image: rocket_list,
-    description: 'rocket_list',
-    title: 'RocketList',
-    link: 'http://rocket-list.vercel.app/',
-    link_label: 'rocket-list',
+    description: "rocket_list",
+    title: "RocketList",
+    link: "http://rocket-list.vercel.app/",
+    link_label: "rocket-list",
+  },
+  {
+    image: hexacode,
+    description: "hexacode",
+    title: "Hexacode",
+    link: "https://hexacode-ten.vercel.app/",
+    link_label: "hexacode",
   },
   {
     image: radar_covid,
-    description: 'radar_covid',
-    title: 'Radar-Covid',
-    link: 'https://radar-covid.vercel.app/',
-    link_label: 'radar-covid',
+    description: "radar_covid",
+    title: "Radar-Covid",
+    link: "https://radar-covid.vercel.app/",
+    link_label: "radar-covid",
   },
   {
     image: bikecraft,
-    description: 'bikecraft',
-    title: 'BikeCraft',
-    link: 'https://dudupedrosa.github.io/bikcraft/',
-    link_label: 'brikecraft',
+    description: "bikecraft",
+    title: "BikeCraft",
+    link: "https://dudupedrosa.github.io/bikcraft/",
+    link_label: "brikecraft",
   },
   {
     image: rocket_nfts,
-    description: 'rocket_nft',
-    title: 'Rocket-Nfts',
-    link: 'https://web-nfts.vercel.app/',
-    link_label: 'Rocket-Nfts',
+    description: "rocket_nft",
+    title: "Rocket-Nfts",
+    link: "https://web-nfts.vercel.app/",
+    link_label: "Rocket-Nfts",
   },
 ];
 
@@ -107,13 +115,13 @@ function PortfolioCard() {
                         {project.title}
                       </h3>
                       <p className="text-sm md:text-base font-medium text-gray-400 mt-2 text-center">
-                        {t(project.description)} {t('call_action_see_project')}{' '}
+                        {t(project.description)} {t("call_action_see_project")}{" "}
                         <a
                           href={project.link}
                           target="_blank"
                           className="underline text-orange-600 font-bold tracking-wider hover:text-gray-200"
                         >
-                          {t('project_name_slide', {
+                          {t("project_name_slide", {
                             projectName: project.link_label,
                           })}
                         </a>
@@ -139,7 +147,7 @@ function PortfolioCard() {
                     onClick={() => {
                       instanceRef.current?.moveToIdx(idx);
                     }}
-                    className={'dot' + (currentSlide === idx ? ' active' : '')}
+                    className={"dot" + (currentSlide === idx ? " active" : "")}
                   ></button>
                 );
               })}
@@ -156,7 +164,7 @@ function MyPortfolioComponent() {
 
   return (
     <div className="mt-16 px-6 md:px-[52px] pb-16 border-b-main border-b-solid border-b-white">
-      <PageTitle text={t('my_projects')} />
+      <PageTitle text={t("my_projects")} />
 
       <div className="max-w-[1020px] ml-[auto] mr-[auto] mt-12 py-8 px-5 bg-gray-800 rounded-xl shadow-cardMain border-main border-solid border-gray-400">
         <div className="max-w-[760px] ml-[auto] mr-[auto]">
@@ -166,12 +174,12 @@ function MyPortfolioComponent() {
 
       <div className="max-w-[1020px] ml-[auto] mr-[auto] flex justify-end mt-2">
         <Link
-          href={'/projects'}
+          href={"/projects"}
           className="flex items-center gap-2 max-w-max cursor-default"
         >
           <FaRegHandPointRight className="text-orange-600 animate-bouce-x text-xl md:text-2xl block" />
           <span className="underline hover:text-gray-400 cursor-pointer text-lg md:text-xl lowercase font-medium text-orange-600 flex py-1">
-            {t('list_all_projects')}
+            {t("list_all_projects")}
           </span>
         </Link>
       </div>

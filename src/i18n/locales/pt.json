@@ -15,6 +15,7 @@
   "socials_links": "Redes sociais",
   "open_new_job": "Estou disponível para um novo projeto, venha falar comigo.",
   "open_new_job_sub_title": "Vamos transformar suas ideias em realidade! Entre em contato e vamos discutir como posso ajudar no seu próximo projeto.",
+  "memory_game": "Jogo da Memória Online (1v1) Um jogo da memória multiplayer onde dois jogadores competem em tempo real. Usa WebSockets para comunicação instantânea. Tecnologias: Next.js, TypeScript, ShadCN, Axios, Sonner Toast, Framer Motion, Nest.js, Prisma, PostgreSQL e Socket.IO. Possui CRUD completo, autenticação de usuário (JWT) e de salas.",
   "placa_mais": "Projeto freelancer desenvolvido com HTML, CSS e JavaScript, criado completamente do zero. Utilizei apenas um layout no figma como referência e escrevi todo o código manualmente.",
   "hexacode": "Projeto freelancer desenvolvido com HTML, CSS, JavaScript e JQuery, criado completamente do zero. Utilizei apenas um layout no figma como referência e escrevi todo o código manualmente.",
   "rocket_list": "Projeto full-stack desenvolvido para fins de estudo, feito totalmente do zero. O front-end foi criado utilizando HTML, CSS Styled-Components, TypeScript e Vite.js (React). O back-end foi implementado com Node.js, Express.js, e MongoDB, incluindo a criação e o gerenciamento de uma API REST com um CRUD completo e fluxo de autenticação utilizando JSON Web Token.",
