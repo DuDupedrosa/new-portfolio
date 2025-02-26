@@ -1,6 +1,6 @@
 import PageTitle from "@/components/Common/PageTitle.tsx";
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 // projetos
 import placa_mais from "@/assets/images/projects/placa_mais.png";
@@ -18,13 +18,21 @@ import { useTranslation } from "react-i18next";
 import { FaRegHandPointRight } from "react-icons/fa";
 import Link from "next/link";
 
-const projects = [
+const projects: {
+  image: StaticImageData;
+  description: string;
+  title: string;
+  link: string;
+  link_label: string;
+  api?: string;
+}[] = [
   {
     image: memory_game,
     description: "memory_game",
     title: "MemoryGame",
     link: "https://memory-game-ten-coral.vercel.app/",
     link_label: "memory-game",
+    api: "https://seal-app-zcw2g.ondigitalocean.app/docs",
   },
   {
     image: placa_mais,
@@ -39,6 +47,7 @@ const projects = [
     title: "RocketList",
     link: "http://rocket-list.vercel.app/",
     link_label: "rocket-list",
+    api: "https://monkfish-app-cupdt.ondigitalocean.app/api-docs",
   },
   {
     image: hexacode,
@@ -116,15 +125,34 @@ function PortfolioCard() {
                       </h3>
                       <p className="text-sm md:text-base font-medium text-gray-400 mt-2 text-center">
                         {t(project.description)} {t("call_action_see_project")}{" "}
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          className="underline text-orange-600 font-bold tracking-wider hover:text-gray-200"
-                        >
-                          {t("project_name_slide", {
-                            projectName: project.link_label,
-                          })}
-                        </a>
+                        {project.api && project.api.length > 0 ? (
+                          <div className="flex gap-4 justify-center flex-wrap my-2">
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              className="px-4 py-2 bg-orange-600 text-white rounded-lg  tracking-wider hover:bg-orange-500 transition"
+                            >
+                              {t("see_project_front")}
+                            </a>
+                            <a
+                              href={project.api}
+                              target="_blank"
+                              className="px-4 py-2 bg-gray-600 text-white rounded-lg tracking-wider hover:bg-gray-700 transition"
+                            >
+                              {t("see_project_backend")}
+                            </a>
+                          </div>
+                        ) : (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            className="underline text-orange-600 font-bold tracking-wider hover:text-gray-200"
+                          >
+                            {t("project_name_slide", {
+                              projectName: project.link_label,
+                            })}
+                          </a>
+                        )}
                       </p>
                     </div>
                   </div>

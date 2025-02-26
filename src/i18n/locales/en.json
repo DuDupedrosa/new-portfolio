@@ -16,7 +16,7 @@
   "open_new_job": "I'm available for a new project, come and talk to me.",
   "open_new_job_sub_title": "Let's turn your ideas into reality! Get in touch and let's discuss how I can help with your next project.",
   "placa_mais": "Freelance project developed with HTML, CSS and JavaScript, created completely from scratch. I only used a figma layout as a reference and wrote all the code manually.",
-  "memory_game": "Memory Game Online (1v1) A multiplayer memory game where two players compete in real time. Uses WebSockets for instant communication. Technologies: Next.js, TypeScript, ShadCN, Axios, Sonner Toast, Framer Motion, Nest.js, Prisma, PostgreSQL, and Socket.IO. Includes full CRUD, user authentication, and room authentication.",
+  "memory_game": "Memory Game Online (1v1) A multiplayer memory game where two players compete in real time. Uses WebSockets for instant communication. Technologies: Next.js, TypeScript, ShadCN, tailwindcss, Framer Motion, Nest.js, Prisma, PostgreSQL, and Socket.IO. Includes full CRUD, user authentication (JWT token), and room authentication.",
   "hexacode": "Freelance project developed with HTML, CSS, JavaScript and jQuery, created completely from scratch. I only used a figma layout as a reference and wrote all the code manually.",
   "rocket_list": "Full-stack project developed for study purposes, made entirely from scratch. The front-end was created using HTML, CSS Styled-Components, TypeScript and Vite.js (React). The back-end was implemented with Node.js, Express.js, and MongoDB, including the creation and management of a REST API with a complete CRUD and authentication flow using JSON Web Token.",
   "radar_covid": "Project developed for study purposes, created entirely from scratch. I used HTML, CSS(styled-components), TypeScript and Next.js (React) in the development. The project consumes a REST API with real COVID-19 data, presenting it in graphs, tables and forms.",
@@ -55,5 +55,7 @@
   "projects": "Projects",
   "who_am_i": "Who am I?",
   "scss_css": "CSS with SASS",
-  "next": "Next.js"
+  "next": "Next.js",
+  "see_project_front": "See project (Front-end)",
+  "see_project_backend": "API (Backend)"
 }

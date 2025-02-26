@@ -1,8 +1,13 @@
 export const allProjectsItems = [
   {
-    name: "MemoryGame",
-    technologies: "Next.js / Nest.js / Prisma / Socket.IO / ...",
+    name: "MemoryGame-FrontEnd",
+    technologies: "Next.js / taiwindcss / Socket.IO / ...",
     link: "https://memory-game-ten-coral.vercel.app/",
+  },
+  {
+    name: "MemoryGame-API",
+    technologies: "Nest.js / Prisma / Socket.IO / PostgreSQL / ...",
+    link: "https://seal-app-zcw2g.ondigitalocean.app/docs",
   },
   {
     name: "PlacaMais",
@@ -15,9 +20,14 @@ export const allProjectsItems = [
     link: "https://hexacode-ten.vercel.app/",
   },
   {
-    name: "Rocket-List",
-    technologies: "html / styled-components / React / Express.js / ... ",
+    name: "Rocket-List-FrontEnd",
+    technologies: "html / styled-components / React / Vite.js / ... ",
     link: "http://rocket-list.vercel.app/",
+  },
+  {
+    name: "Rocket-List-API",
+    technologies: "Express / MongoDB / Node.js / JWT ... ",
+    link: "https://monkfish-app-cupdt.ondigitalocean.app/api-docs/",
   },
   {
     name: "Radar-Covid",
