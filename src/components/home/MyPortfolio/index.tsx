@@ -9,8 +9,7 @@ import radar_covid from "@/assets/images/projects/radar_covid.png";
 import bikecraft from "@/assets/images/projects/bikecraft.png";
 import rocket_nfts from "@/assets/images/projects/rocket_nfts.png";
 import rocket_list from "@/assets/images/projects/rocket_list.jpg";
-import memory_game from "@/assets/images/projects/memory_game.png";
-
+import memory_game_1 from "@/assets/images/projects/memory_game_1.png";
 // slide
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -27,7 +26,7 @@ const projects: {
   api?: string;
 }[] = [
   {
-    image: memory_game,
+    image: memory_game_1,
     description: "memory_game",
     title: "MemoryGame",
     link: "https://memory-game-ten-coral.vercel.app/",
