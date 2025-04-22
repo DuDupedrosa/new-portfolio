@@ -57,5 +57,6 @@
   "scss_css": "CSS com SASS",
   "next": "Next.js",
   "see_project_front": "Ver projeto (Front-end)",
-  "see_project_backend": "API (Backend)"
+  "see_project_backend": "API (Backend)",
+  "codepdf_description": "Aplicação web full stack para manipulação de PDFs, desenvolvida com Next.js, Tailwind CSS, daisyUI, Node.js e Express. Permite realizar compressão, conversões, mesclagem, divisão, proteção com senha, adição de marca d’água, entre outras funções. Projeto responsivo, com foco em SEO e usabilidade, criado para estudos com propósito prático e em constante evolução."
 }

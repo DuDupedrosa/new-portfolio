@@ -10,6 +10,8 @@ import bikecraft from "@/assets/images/projects/bikecraft.png";
 import rocket_nfts from "@/assets/images/projects/rocket_nfts.png";
 import rocket_list from "@/assets/images/projects/rocket_list.jpg";
 import memory_game_1 from "@/assets/images/projects/memory_game_1.png";
+import codepdf from "@/assets/images/projects/codepdf.png";
+
 // slide
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -34,11 +36,11 @@ const projects: {
     api: "https://seal-app-zcw2g.ondigitalocean.app/docs",
   },
   {
-    image: placa_mais,
-    description: "placa_mais",
-    title: "PlacaMais",
-    link: "https://placa-mais.vercel.app/",
-    link_label: "placa-mais",
+    image: codepdf,
+    description: "codepdf_description",
+    title: "Codepdf",
+    link: "https://code-pdf.vercel.app/",
+    link_label: "codepdf",
   },
   {
     image: rocket_list,
@@ -49,18 +51,18 @@ const projects: {
     api: "https://monkfish-app-cupdt.ondigitalocean.app/api-docs",
   },
   {
+    image: placa_mais,
+    description: "placa_mais",
+    title: "PlacaMais",
+    link: "https://placa-mais.vercel.app/",
+    link_label: "placa-mais",
+  },
+  {
     image: hexacode,
     description: "hexacode",
     title: "Hexacode",
     link: "https://hexacode-ten.vercel.app/",
     link_label: "hexacode",
-  },
-  {
-    image: radar_covid,
-    description: "radar_covid",
-    title: "Radar-Covid",
-    link: "https://radar-covid.vercel.app/",
-    link_label: "radar-covid",
   },
   {
     image: bikecraft,

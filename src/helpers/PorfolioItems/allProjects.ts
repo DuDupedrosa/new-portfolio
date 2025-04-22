@@ -10,14 +10,9 @@ export const allProjectsItems = [
     link: "https://seal-app-zcw2g.ondigitalocean.app/docs",
   },
   {
-    name: "PlacaMais",
-    technologies: "html / css / javascript",
-    link: "https://placa-mais.vercel.app/",
-  },
-  {
-    name: "Hexacode",
-    technologies: "html / css / JQuery",
-    link: "https://hexacode-ten.vercel.app/",
+    name: "Codepdf",
+    technologies: "Next.js / DaisyUI / Express / Node.js ... ",
+    link: "https://code-pdf.vercel.app/",
   },
   {
     name: "Rocket-List-FrontEnd",
@@ -28,6 +23,16 @@ export const allProjectsItems = [
     name: "Rocket-List-API",
     technologies: "Express / MongoDB / Node.js / JWT ... ",
     link: "https://monkfish-app-cupdt.ondigitalocean.app/api-docs/",
+  },
+  {
+    name: "PlacaMais",
+    technologies: "html / css / javascript",
+    link: "https://placa-mais.vercel.app/",
+  },
+  {
+    name: "Hexacode",
+    technologies: "html / css / JQuery",
+    link: "https://hexacode-ten.vercel.app/",
   },
   {
     name: "Radar-Covid",
