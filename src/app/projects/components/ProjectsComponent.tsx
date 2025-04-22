@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import BreadCrumb from '@/components/BreadCrumb';
-import Header from '@/components/Common/Header';
-import PageTitle from '@/components/Common/PageTitle.tsx';
-import { allProjectsItems } from '@/helpers/PorfolioItems/allProjects';
-import useMedia from '@/hooks/useMedia';
-import { AllProjectsItemType } from '@/types/project';
-import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { FaInfoCircle } from 'react-icons/fa';
-import ReactPaginate from 'react-paginate';
+import BreadCrumb from "@/components/BreadCrumb";
+import Header from "@/components/Common/Header";
+import PageTitle from "@/components/Common/PageTitle.tsx";
+import { allProjectsItems } from "@/helpers/PorfolioItems/allProjects";
+import useMedia from "@/hooks/useMedia";
+import { AllProjectsItemType } from "@/types/project";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { FaInfoCircle } from "react-icons/fa";
+import ReactPaginate from "react-paginate";
 
 function ProjectsComponent() {
   const [projects, setProjects] = useState<AllProjectsItemType[] | []>([]);
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemsPerPage, setItemsPerPage] = useState<number>(4);
   const { t } = useTranslation();
-  const isMobile = useMedia('(max-width: 768px)');
+  const isMobile = useMedia("(max-width: 768px)");
 
   useEffect(() => {
     const getFirstFourProjects = allProjectsItems.slice(0, 4);
@@ -35,7 +35,7 @@ function ProjectsComponent() {
   function handleRedirectProject(link: string) {
     if (isMobile) return;
 
-    window.open(link, '_blank');
+    window.open(link, "_blank");
   }
 
   return (
@@ -46,7 +46,7 @@ function ProjectsComponent() {
       <div className="px-8 mt-8">
         <BreadCrumb
           routes={[
-            { label: t('projects'), current: true, toPath: '/projects' },
+            { label: t("projects"), current: true, toPath: "/projects" },
           ]}
         />
       </div>
@@ -55,10 +55,10 @@ function ProjectsComponent() {
       <section className="mt-16 md:mt-20 pb-20 px-8">
         {/* header - title */}
         <div>
-          <PageTitle text={t('my_projects')} />
+          <PageTitle text={t("my_projects")} />
           <div className="grid place-items-center">
             <p className="text-base md:text-lg font-semibold text-gray-400 text-center max-w-3xl mt-5">
-              {t('my_projects_subtitle')}
+              {t("my_projects_subtitle")}
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ function ProjectsComponent() {
           {/* total de projetos */}
           <div className="mb-5 flex items-center gap-2">
             <span className="text-2xl block font-normal text-gray-200">
-              {t('projects_total')}:
+              {t("projects_total")}:
             </span>
             <span className="text-2xl font-bold text-orange-600 p-1 rounded-lg">
               {allProjectsItems.length}
@@ -78,7 +78,7 @@ function ProjectsComponent() {
           <div className="hidden md:flex flex-col md:flex-row md:items-center gap-2">
             <FaInfoCircle className="text-blue-600 text-base" />
             <span className="flex text-gray-400 font-semibold text-base">
-              {t('click_card_see_project')}
+              {t("click_card_see_project")}
             </span>
           </div>
 
@@ -108,7 +108,7 @@ function ProjectsComponent() {
                     target="_blank"
                     className="text-sm justify-self-end block py-1 md:hidden font-semibold text-center text-orange-600 underline mt-1"
                   >
-                    {t('see_project')}
+                    {t("see_project")}
                   </a>
                 </div>
               );
@@ -124,10 +124,10 @@ function ProjectsComponent() {
               pageRangeDisplayed={1}
               pageCount={pageCount}
               previousLabel="<"
-              containerClassName={'pagination'}
-              activeClassName={'active'}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
               marginPagesDisplayed={1}
-              breakClassName={'break-me'}
+              breakClassName={"break-me"}
             />
           </div>
         </div>
