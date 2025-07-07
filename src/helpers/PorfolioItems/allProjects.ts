@@ -1,13 +1,18 @@
 export const allProjectsItems = [
   {
     name: "MemoryGame-FrontEnd",
-    technologies: "Next.js / taiwindcss / Socket.IO / ...",
+    technologies: "Next.js / tailwindcss / Socket.IO / ...",
     link: "https://memory-game-ten-coral.vercel.app/",
   },
   {
     name: "MemoryGame-API",
     technologies: "Nest.js / Prisma / Socket.IO / PostgreSQL / ...",
     link: "https://seal-app-zcw2g.ondigitalocean.app/docs",
+  },
+  {
+    name: "SnipplyURl",
+    technologies: "Next.js / NextAuth / tailwindcss / ...",
+    link: "https://snipplyurl.com.br/",
   },
   {
     name: "Codepdf",
@@ -101,7 +106,7 @@ export const allProjectsItems = [
   },
   {
     name: "First-Porfolio",
-    technologies: "html / taiwindcss / javascript",
+    technologies: "html / tailwindcss / javascript",
     link: "https://dudupedrosa.github.io/portfolio/",
   },
 ];

@@ -4,7 +4,7 @@
   "hy_everyone": "Olá 👋, eu sou Eduardo Pedrosa",
   "solve_your_problem": "Eu vou resolver seu problema, criando um código limpo e eficiente",
   "lets_talk_with_me": "Venha falar comigo",
-  "intro_home_text": "Com 22 anos e uma paixão por tecnologia, sou um desenvolvedor front-end dedicado a criar códigos limpos e eficientes que resolvem problemas reais. Neste portfólio, você encontrará projetos que destacam minha habilidade em transformar conceitos em experiências digitais funcionais e atraentes. Vamos explorar como posso contribuir para o sucesso do seu próximo projeto.",
+  "intro_home_text": "Com 23 anos e uma paixão por tecnologia, sou um desenvolvedor front-end dedicado a criar códigos limpos e eficientes que resolvem problemas reais. Neste portfólio, você encontrará projetos que destacam minha habilidade em transformar conceitos em experiências digitais funcionais e atraentes. Vamos explorar como posso contribuir para o sucesso do seu próximo projeto.",
   "front_is_my_world": "O front-end é a minha paixão. Deixe-me solucionar seu problema com um código eficiente e elegante",
   "intro_button_call_action": "Clique no botão abaixo e venha conversar comigo! Estou à disposição.",
   "home": "Inicio",
@@ -58,5 +58,6 @@
   "next": "Next.js",
   "see_project_front": "Ver projeto (Front-end)",
   "see_project_backend": "API (Backend)",
-  "codepdf_description": "Aplicação web full stack para manipulação de PDFs, desenvolvida com Next.js, Tailwind CSS, daisyUI, Node.js e Express. Permite realizar compressão, conversões, mesclagem, divisão, proteção com senha, adição de marca d’água, entre outras funções. Projeto responsivo, com foco em SEO e usabilidade, criado para estudos com propósito prático e em constante evolução."
+  "codepdf_description": "Aplicação web full stack para manipulação de PDFs, desenvolvida com Next.js, Tailwind CSS, daisyUI, Node.js e Express. Permite realizar compressão, conversões, mesclagem, divisão, proteção com senha, adição de marca d’água, entre outras funções. Projeto responsivo, com foco em SEO e usabilidade, criado para estudos com propósito prático e em constante evolução.",
+  "snipply_url": "SnipplyURL é um encurtador de links completo, inspirado em plataformas como o Bitly. Desenvolvido com Next.js (App Router), Tailwind CSS e DaisyUI, o projeto conta com backend via API routes do próprio Next.js. Possui autenticação com NextAuth, incluindo login com Google e e-mail/senha, além de recursos como envio de e-mails, recuperação de senha, redirecionamento inteligente e tratamento de erros."
 }

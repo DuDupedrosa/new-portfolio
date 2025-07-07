@@ -5,13 +5,12 @@ import Image, { StaticImageData } from "next/image";
 // projetos
 import placa_mais from "@/assets/images/projects/placa_mais.png";
 import hexacode from "@/assets/images/projects/hexacode.png";
-import radar_covid from "@/assets/images/projects/radar_covid.png";
 import bikecraft from "@/assets/images/projects/bikecraft.png";
 import rocket_nfts from "@/assets/images/projects/rocket_nfts.png";
 import rocket_list from "@/assets/images/projects/rocket_list.jpg";
 import memory_game_1 from "@/assets/images/projects/memory_game_1.png";
 import codepdf from "@/assets/images/projects/codepdf.png";
-
+import snipplu_url from "@/assets/images/projects/snipplyurl-min.png";
 // slide
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -34,6 +33,13 @@ const projects: {
     link: "https://memory-game-ten-coral.vercel.app/",
     link_label: "memory-game",
     api: "https://seal-app-zcw2g.ondigitalocean.app/docs",
+  },
+  {
+    image: snipplu_url,
+    description: "snipply_url",
+    title: "SnipplyURL",
+    link: "https://www.snipplyurl.com.br/",
+    link_label: "SnipplyURL",
   },
   {
     image: codepdf,

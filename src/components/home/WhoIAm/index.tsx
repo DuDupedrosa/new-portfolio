@@ -36,7 +36,7 @@ function WhoIam() {
                   <p className="text-lg font-normal text-gray-400">
                     Sou um desenvolvedor{" "}
                     <span className="font-bold">front-end</span> apaixonado pelo
-                    que faço. Com 22 anos e formação em{" "}
+                    que faço. Com 23 anos e formação em{" "}
                     <span className="font-bold">
                       Análise e Desenvolvimento de Sistemas
                     </span>
@@ -94,7 +94,7 @@ function WhoIam() {
                 <div>
                   <p className="text-lg font-normal text-gray-400">
                     I'm a <span className="font-bold">front-end</span> developer
-                    with a passion for what I do. At 22, I have a degree in{" "}
+                    with a passion for what I do. At 23, I have a degree in{" "}
                     <span className="font-bold">
                       Systems Analysis and Development
                     </span>
