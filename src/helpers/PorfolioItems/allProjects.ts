@@ -10,7 +10,7 @@ export const allProjectsItems = [
     link: "https://seal-app-zcw2g.ondigitalocean.app/docs",
   },
   {
-    name: "SnipplyURl",
+    name: "SnipplyURL",
     technologies: "Next.js / NextAuth / tailwindcss / ...",
     link: "https://snipplyurl.com.br/",
   },
