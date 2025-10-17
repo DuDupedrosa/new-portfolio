@@ -1,10 +1,10 @@
-import PageTitle from "@/components/Common/PageTitle.tsx";
-import React from "react";
-import Image from "next/image";
-import Eduardo from "@/assets/images/07-dealboard 1.png";
-import { handleRedirect } from "@/helpers/methods/handleRedirect";
-import { useTranslation } from "react-i18next";
-import { languageTextEnum } from "@/helpers/enums/LanguageEnum";
+import PageTitle from '@/components/Common/PageTitle.tsx';
+import React from 'react';
+import Image from 'next/image';
+import Eduardo from '@/assets/images/07-dealboard 1.png';
+import { handleRedirect } from '@/helpers/methods/handleRedirect';
+import { useTranslation } from 'react-i18next';
+import { languageTextEnum } from '@/helpers/enums/LanguageEnum';
 
 function WhoIam() {
   const { i18n, t } = useTranslation();
@@ -13,7 +13,7 @@ function WhoIam() {
     <div className="mt-16 pb-16 border-b-main border-b-solid border-b-white">
       {/* container */}
       <div>
-        <PageTitle text={t("who_am_i")} />
+        <PageTitle text={t('who_am_i')} />
 
         {/* container para centralizar o conteúdo  */}
         <div className="grid place-items-center mt-16 px-6 md:px-14">
@@ -34,32 +34,32 @@ function WhoIam() {
                 {/* primeira coluna */}
                 <div>
                   <p className="text-lg font-normal text-gray-400">
-                    Sou um desenvolvedor{" "}
+                    Sou um desenvolvedor{' '}
                     <span className="font-bold">front-end</span> apaixonado pelo
-                    que faço. Com 23 anos e formação em{" "}
+                    que faço. Com 23 anos e formação em{' '}
                     <span className="font-bold">
                       Análise e Desenvolvimento de Sistemas
                     </span>
-                    . Minha jornada profissional começou na{" "}
+                    . Minha jornada profissional começou na{' '}
                     <span
                       className="font-bold cursor-pointer underline hover:text-gray-200 transition-all"
                       onClick={() =>
-                        handleRedirect("https://www.dxainvest.com/")
+                        handleRedirect('https://www.dxainvest.com/')
                       }
                     >
                       DXA Invest
                     </span>
-                    , onde <span className="font-bold">estagiei</span> por{" "}
+                    , onde <span className="font-bold">estagiei</span> por{' '}
                     <span className="font-bold">1 ano e 2 meses</span>, ganhando
                     uma valiosa experiência e aprimorando minhas competências.
                   </p>
                   <p className="text-lg font-normal text-gray-400 mt-2">
-                    Após o estágio, fui promovido a{" "}
+                    Após o estágio, fui promovido a{' '}
                     <span className="font-bold">trainee</span>, posição em que
-                    permaneci por{" "}
+                    permaneci por{' '}
                     <span className="font-bold">1 ano e 3 meses</span>, o que me
                     permitiu me envolver em projetos desafiadores e contribuir
-                    significativamente para a equipe. Recentemente, fui{" "}
+                    significativamente para a equipe. Recentemente, fui{' '}
                     <span className="font-bold">
                       promovido a Analista de Desenvolvimento
                     </span>
@@ -69,14 +69,15 @@ function WhoIam() {
                 </div>
                 <div>
                   <p className="text-lg font-normal text-gray-400">
-                    Além do meu trabalho formal, também sou ativo no mundo dos{" "}
+                    Além do meu trabalho formal, também sou ativo no mundo dos{' '}
                     <span className="font-bold">freelances</span>, onde
-                    desenvolvo projetos utilizando{" "}
+                    desenvolvo projetos utilizando{' '}
                     <span className="font-bold">tecnologias modernas</span> como
                     JavaScript, TypeScript, React, React Native, Vue.js,
                     Node.js, Nest.js e dentre outras... Minha dedicação e
-                    entusiasmo pelo front-end são evidentes em cada projeto que
-                    entrego, buscando sempre a excelência e a inovação.
+                    entusiasmo pelo desenvolvimento de software são evidentes em
+                    cada projeto que entrego, buscando sempre a excelência e a
+                    inovação.
                   </p>
                   <p className="text-lg font-normal text-gray-400 mt-2">
                     A cada dia, estou mais empenhado em me tornar um
@@ -94,31 +95,31 @@ function WhoIam() {
                 <div>
                   <p className="text-lg font-normal text-gray-400">
                     I'm a <span className="font-bold">front-end</span> developer
-                    with a passion for what I do. At 23, I have a degree in{" "}
+                    with a passion for what I do. At 23, I have a degree in{' '}
                     <span className="font-bold">
                       Systems Analysis and Development
                     </span>
-                    . My professional journey began at{" "}
+                    . My professional journey began at{' '}
                     <span
                       className="font-bold cursor-pointer underline hover:text-gray-200 transition-all"
                       onClick={() =>
-                        handleRedirect("https://www.dxainvest.com/")
+                        handleRedirect('https://www.dxainvest.com/')
                       }
                     >
                       DXA Invest
                     </span>
-                    , where I <span className="font-bold">interned</span> for{" "}
+                    , where I <span className="font-bold">interned</span> for{' '}
                     <span className="font-bold">1 year and 2 months</span>,
                     gaining valuable experience and honing my skills.
                   </p>
                   <p className="text-lg font-normal text-gray-400 mt-2">
-                    After the internship, I was promoted to{" "}
+                    After the internship, I was promoted to{' '}
                     <span className="font-bold">trainee</span>, a position I
-                    held for{" "}
+                    held for{' '}
                     <span className="font-bold">1 year and 3 months</span>,
                     which allowed me to get involved in challenging projects and
                     contribute significantly to the team. Recently, I was
-                    promoted to{" "}
+                    promoted to{' '}
                     <span className="font-bold">Development Analyst</span>,
                     which reflects my growth and dedication throughout this
                     journey.
@@ -128,12 +129,12 @@ function WhoIam() {
                   <p className="text-lg font-normal text-gray-400">
                     In addition to my formal work, I'm also active in the
                     <span className="font-bold">freelance</span> world, where I
-                    develop projects using{" "}
+                    develop projects using{' '}
                     <span className="font-bold">modern technologies</span> such
                     as JavaScript, TypeScript, React, React Native, Vue.js,
                     Node.js, Nest.js and others... My dedication and enthusiasm
-                    for the front-end are evident in every project I deliver,
-                    always striving for excellence and innovation.
+                    for the software development are evident in every project I
+                    deliver, always striving for excellence and innovation.
                   </p>
                   <p className="text-lg font-normal text-gray-400 mt-2">
                     Every day, I am more committed to becoming an even more

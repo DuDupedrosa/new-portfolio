@@ -45,6 +45,12 @@ const dividerItems = [
   {
     name: 'Python',
   },
+  {
+    name: 'C#',
+  },
+  {
+    name: '.NET',
+  },
 ];
 
 function DividerSection() {
