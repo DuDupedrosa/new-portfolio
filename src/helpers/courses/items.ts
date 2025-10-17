@@ -77,4 +77,10 @@ export const coursesList = [
     classes: 334,
     house: 'udemy.com',
   },
+  {
+    name: 'Angular',
+    hours: 5,
+    classes: 4,
+    house: 'rocketseat.com.br',
+  },
 ];
